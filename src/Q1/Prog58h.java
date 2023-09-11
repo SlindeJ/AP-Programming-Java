@@ -8,7 +8,7 @@ public class Prog58h {
         double p = input.nextDouble();
         System.out.print("Interest rate? ");
         double r = input.nextDouble();
-
-
+        System.out.print("Amount saved: ");
+        double n = input.nextDouble();
     }
 }
