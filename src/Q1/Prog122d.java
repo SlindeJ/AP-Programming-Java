@@ -1,0 +1,11 @@
+package Q1;
+
+public class Prog122d {
+    public static void main(String[] args) {
+        int x = -12;
+        while (x < 17) {
+            double y = Math.pow(x, 6) - (3 * Math.pow(x, 5)) - (93 * Math.pow(x, 4)) + (87 * Math.pow(x, ));
+        }
+
+    }
+}
