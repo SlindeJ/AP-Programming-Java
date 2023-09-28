@@ -35,18 +35,23 @@ public class StrInt6 {
 //        int Ycount = 0;
 //        int Zcount = 0;
 
-        // ababc
-        // abacb
+
 // make a for loop that runs for every index? in the string
 // then make a for loop that goes through the string and finds if any char is equal to the current char and remove that one
 // then keep resetting the value for the length of the string so you don't "miss" the target char
 // run until done and len of new string are all unique chars
-
         for (int lcv = 0; lcv < mytext.length(); lcv++) {
             char cur = mytext.charAt(lcv);
-            if (mytext.indexOf(cur) != mytext.lastIndexOf(cur)) {
-
+            while (mytext.indexOf(cur) != mytext.lastIndexOf(cur)) {
+                mytext = mytext.substring(0, mytext.lastIndexOf(cur)) + mytext.substring(mytext.lastIndexOf(cur) + 1);
             }
         }
+        System.out.println("The amount of unique characters in the string is: " + mytext.length());
+        System.out.println(mytext);
     }
 }
+/*
+Enter a string: jjnaskljdjKLSIUQKJDIJ!@#$%^
+The amount of unique characters in the string is: 16
+jnaskldiuq!@#$%^
+ */
