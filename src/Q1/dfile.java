@@ -6,7 +6,7 @@ import java.io.IOException;
 public class dfile {
     public static void main(String[] args) {
         try {
-            Scanner input = new Scanner(new File("Langdat/Prog285b.dat"));
+            Scanner input = new Scanner(new File("Langdat/Prog285b.dat")); // remember to replace with new data file
             while (input.hasNext()) {
             }
         } catch (IOException e) {

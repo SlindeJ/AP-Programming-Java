@@ -36,6 +36,12 @@ public class Cl88a {
         }
     }
     public int getsum() { return sum; }
+    public double getdiff() { return diff; }
+    public int getproduct() { return product; }
+    public double getaverage() { return average; }
+    public int getabsval() { return absval; }
+    public int getmin() { return min; }
+    public int getmax() { return max; }
 
 
 }
