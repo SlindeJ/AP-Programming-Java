@@ -16,6 +16,13 @@ public class Cl93a {
         regpay = 0;
         latepay = 0;
     }
+    public void calc() {
+        basecharge = kwh * 0.0475;
+        surcharge = basecharge * 0.1;
+        citytax = basecharge * 0.03;
+        regpay = basecharge + surcharge + citytax;
+        latepay = regpay * 1.04;
+    }
 
     public double getBasecharge() {return basecharge;}
     public double getSurcharge() {return surcharge;}
@@ -24,7 +31,7 @@ public class Cl93a {
     public double getLatepay() {return latepay;}
 
     public String toString() {
-        basecharge = kwh * 0.0475;
-        surcharge = basecharge *
+
+        return basecharge + "\n" + surcharge + "\n" + citytax + "\n" + regpay + "\n" + latepay + "\n";
     }
 }
