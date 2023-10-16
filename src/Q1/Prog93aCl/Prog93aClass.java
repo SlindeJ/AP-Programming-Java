@@ -10,5 +10,6 @@ public class Prog93aClass {
         Cl93a helper = new Cl93a(kWatts);
         helper.calc();
         helper.toString();
+
     }
 }

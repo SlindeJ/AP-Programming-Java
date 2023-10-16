@@ -16,7 +16,7 @@ public class Cl93a {
         regpay = 0;
         latepay = 0;
     }
-    public void calc() {
+    public void calc() { 
         basecharge = kwh * 0.0475;
         surcharge = basecharge * 0.1;
         citytax = basecharge * 0.03;
