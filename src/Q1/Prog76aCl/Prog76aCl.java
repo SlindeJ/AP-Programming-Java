@@ -8,5 +8,6 @@ public class Prog76aCl {
         int num = input.nextInt();
 
 
+
     }
 }
