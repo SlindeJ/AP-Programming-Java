@@ -6,11 +6,19 @@ public class Prog82aClass {
         Scanner nou = new Scanner(System.in);
         System.out.print("Please enter the speed limit: ");
         int spdlim = nou.nextInt();
-        System.out.print("Please enter the speed the vehicle was going");
+        System.out.print("Please enter the speed the vehicle was going: ");
         int speeding = nou.nextInt();
 
 
-        Cl82a helper = new Cl82a(); // take in spdlim and speeding
+        Cl82a helper = new Cl82a(spdlim, speeding); // take in spdlim and speeding
+        helper.calc();
+        double fine = helper.getFine();
 
+        System.out.printf("Fine----------------------$%.2f", fine);
     }
 }
+/*
+Please enter the speed limit: 70
+Please enter the speed the vehicle was going: 95
+Fine----------------------$145.00
+ */
