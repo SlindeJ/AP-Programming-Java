@@ -11,6 +11,7 @@ public class Prog209aCl {
 
         while (input.hasNext()) {
 
+
         }
     } catch (IOException e) {
         System.out.println("Can't find data file!");
