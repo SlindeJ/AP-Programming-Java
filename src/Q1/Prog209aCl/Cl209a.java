@@ -7,8 +7,7 @@ public class Cl209a {
     //private int tnums; // total read numbers
 
 
-    public Cl209a(int numi) {   // number in
-        rnum = numi;
+    public Cl209a() {   // number in
         G500 = 0;
         L500 = 0;
         //tnums += rnum;      // may need += tnums
@@ -24,14 +23,15 @@ public class Cl209a {
 
 
     // DOING BOOLEANS!!!!!
-    public boolean greater(int num) {
-        return (num >= 500);
+    // change to ints
+    public boolean greater(int numr) {
+        return (numr >= 500);
     }
-    public boolean lesser(int num) {
-        return (num < 500);
+    public boolean lesser(int numr) {
+        return (numr < 500);
     }
 
-    public int getTotal() { return G500 + L500; }
+    public int getTotal() { return (int)G500 + (int)L500; }
     public int getG500() { return G500; }
     public int getL500() { return L500; }
 
