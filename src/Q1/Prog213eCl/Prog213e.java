@@ -8,10 +8,18 @@ public class Prog213e {
     public static void main(String[] args) {
         try {
             Scanner input = new Scanner(new File("Langdat/prog213e.dat")); // remember to replace with new data file
-
+            int age;
+            Cl213e ee = new Cl213e();
             while (input.hasNext()) {
-
+                age = input.nextInt();
+                ee.calc(age);
             }
+            System.out.printf("<20\t\t%d\t\t%.2f\n", ee.getXS(), ((double)ee.getXS() / ee.getSums() * 100.0));
+            System.out.printf("20-39\t\t%d\t\t%.2f\n", ee.getS(), ((double)ee.getS() / ee.getSums() * 100.0));
+            System.out.printf("40-59\t\t%d\t\t%.2f\n", ee.getM(), ((double)ee.getM() / ee.getSums() * 100.0));
+            System.out.printf("60-79\t\t%d\t\t%.2f\n", ee.getL(), ((double)ee.getL() / ee.getSums() * 100.0));
+            System.out.printf("80+\t\t%d\t\t%.2f\n", ee.getXL(), ((double)ee.getXL() / ee.getSums() * 100.0));
+            System.out.println();
         } catch (IOException e) {
             System.out.println("Can't find data file!");
         }

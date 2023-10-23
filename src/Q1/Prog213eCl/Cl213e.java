@@ -36,5 +36,10 @@ public class Cl213e {
         }
     }
 
-    public int getnou() { return 1; }
+    public int getSums() { return sums; }
+    public int getXS() { return XS; }
+    public int getS() { return S; }
+    public int getM() { return M; }
+    public int getL() { return L; }
+    public int getXL() { return XL; }
 }
