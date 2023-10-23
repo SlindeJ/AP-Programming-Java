@@ -13,23 +13,23 @@ public class Cl209a {
         //tnums += rnum;      // may need += tnums
     }
 
-//    public void calc() {
-//        if (rnum >= 500) {
-//            G500++;
-//        } else { L500++; }
-//    }
+    public void calc(int rnum) {
+        if (rnum >= 500) {
+            G500++;
+        } else { L500++; }
+    }
 
 
 
 
     // DOING BOOLEANS!!!!!
     // change to ints
-    public boolean greater(int numr) {
-        return (numr >= 500);
-    }
-    public boolean lesser(int numr) {
-        return (numr < 500);
-    }
+//    public int greater(int numr) {
+//        return (numr >= 500);
+//    }
+//    public boolean lesser(int numr) {
+//        return (numr < 500);
+//    }
 
     public int getTotal() { return (int)G500 + (int)L500; }
     public int getG500() { return G500; }

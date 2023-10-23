@@ -9,20 +9,24 @@ public class Prog209aCl {
     try {
         Scanner input = new Scanner(new File("Langdat/prog215a.dat")); // remember to replace with new data file
         int num = 0;
-        int great = 0;
-        int less = 0;
-        int summ = 0;
         Cl209a helper = new Cl209a();
         while (input.hasNext()) {
             num = input.nextInt();
-            //helper.calc();
-            great += helper.getG500(num);
-            less += helper.getL500(num);
+            helper.calc(num);
+//            great += helper.getG500(num);
+//            less += helper.getL500(num);
         }
 
-        System.out.println(great);
+        System.out.println("The number of numbers less than 500 are: " + helper.getL500());
+        System.out.println("The number of numbers greater than 500 are: " + helper.getG500());
+        System.out.println("The total amount of numbers is: " + helper.getTotal());
     } catch (IOException e) {
         System.out.println("Can't find data file!");
     }
+    }
 }
-}
+/*
+The number of numbers less than 500 are: 192
+The number of numbers greater than 500 are: 208
+The total amount of numbers is: 400
+ */
