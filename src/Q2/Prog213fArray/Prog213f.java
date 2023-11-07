@@ -24,7 +24,6 @@ public class Prog213f {
 
             for (int lcv = 0; lcv < cnt; lcv++)     // loop to println everything
                 System.out.println(list[lcv]); // OR list[lcv].toString()
-
         } catch (IOException e) {
             System.out.println("Can't find data file!");
         }

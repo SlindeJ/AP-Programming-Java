@@ -23,17 +23,20 @@ public class Cl214b {
 
     public void calc() {
         _gPay = _hoursWorked * (_baseRate * _shiftCode);
-        if (_gPay < 100) {
-
-        } else if (100 <= _gPay && _gPay < 150) {
-
+        if (_gPay < 100) {  // setting witholding tax
+            _wTax = _gPay;
+        } else if (100 <= _gPay && _gPay < 150) {       // numbers are the tax rate for each bracket
+            _wTax = _gPay * 1.08;
         } else if (150 <= _gPay && _gPay < 200) {
-
+            _wTax = _gPay * 1.12;
         } else if (200 <= _gPay && _gPay < 300) {
-
+            _wTax = _gPay * 1.15;
         } else {
-
+            _wTax = _gPay * 1.175;
         }
+        if (_YTDPay > 17300) {     // setting social security tax
+            // no ssTax
+        } //else if () {
     }
 
 }
