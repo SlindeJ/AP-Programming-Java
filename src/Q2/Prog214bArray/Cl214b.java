@@ -44,6 +44,9 @@ public class Cl214b {
         _nPay = _gPay - _wTax - _ssTax;
     }
 
+    // getter or toString function
+    public void printFString() { System.out.printf("Hours: %.2f  Rate: %.2f  Shift Factor: %.2f\n\t\t\tCurrent\t\tYear-to-date\nGross Pay:\t %.2f\t\t%.2f\nWithholding:   %.2f\nFICA:\t\t%.2f\nNet Pay:\t%.2f\n", _hoursWorked, _baseRate, _shiftCode, _gPay, _YTDPay, _wTax, _ssTax, _nPay); }
+
 
 }
 
