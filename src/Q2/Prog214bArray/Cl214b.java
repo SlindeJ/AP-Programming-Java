@@ -26,18 +26,24 @@ public class Cl214b {
         if (_gPay < 100) {  // setting witholding tax
             _wTax = _gPay;
         } else if (100 <= _gPay && _gPay < 150) {       // numbers are the tax rate for each bracket
-            _wTax = _gPay * 1.08;
+            _wTax = _gPay * 0.08;
         } else if (150 <= _gPay && _gPay < 200) {
-            _wTax = _gPay * 1.12;
+            _wTax = _gPay * 0.12;
         } else if (200 <= _gPay && _gPay < 300) {
-            _wTax = _gPay * 1.15;
+            _wTax = _gPay * 0.15;
         } else {
-            _wTax = _gPay * 1.175;
+            _wTax = _gPay * 0.175;
         }
-        if (_YTDPay > 17300) {     // setting social security tax
-            // no ssTax
-        } //else if () {
+        if (_YTDPay > 17300 && !(_YTDPay + _gPay < 17300)) {     // setting social security tax
+            _ssTax = 0;
+        } else if (_YTDPay + _gPay <= 17300) {
+            _ssTax = _gPay * 0.0605;
+        } else if (_YTDPay > 17300 && _YTDPay + _gPay < 17300) {     // setting social security tax
+            _ssTax = 0.0605 * (_YTDPay + _gPay - 17300);
+        }
+        _nPay = _gPay - _wTax - _ssTax;
     }
+
 
 }
 
