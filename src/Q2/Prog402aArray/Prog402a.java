@@ -8,12 +8,14 @@ public class Prog402a {
     public static void main(String[] args) {
         try {
             Scanner input = new Scanner(new File("Langdat/prog402a.dat")); // remember to replace with new data file
-            int[] nou = new int[100];
+            //int[] nou = new int[100];
             int count = 0;
 
             while (input.hasNext()) {
                 int idk = input.nextInt();
-                nou[count] = idk;
+                //nou[count] = idk;
+                // call the class
+
                 count++;
             }
 
