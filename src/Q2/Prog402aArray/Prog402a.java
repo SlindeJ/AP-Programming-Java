@@ -7,17 +7,24 @@ import java.util.Scanner;
 public class Prog402a {
     public static void main(String[] args) {
         try {
-            Scanner input = new Scanner(new File("Langdat/prog402a.dat")); // remember to replace with new data file
-            //int[] nou = new int[100];
+            Scanner input = new Scanner(new File("Langdat/prg402a.dat")); // remember to replace with new data file
+            Cl402a[] nou = new Cl402a[100];
             int count = 0;
-
+            double summ = 0;
+            double avg = 0;
             while (input.hasNext()) {
-                int idk = input.nextInt();
-                //nou[count] = idk;
-                // call the class
-
+                int id = input.nextInt();
+                int score = input.nextInt();
+                summ += score;
+                Cl402a coolbeans = new Cl402a(id, score, summ);
+                nou[count] = coolbeans;
                 count++;
             }
+            for (int lcv = 0; lcv < count; lcv++) {
+                nou[lcv].calc();
+                nou[lcv].toFString();
+            }
+
 
         } catch (IOException e) {
             System.out.println("Can't find data file!");
