@@ -12,7 +12,8 @@ public class Cl402a {
         Avg = 0;
     }
 
-    public void calc() {
+    public void calc(double total, int countt) {
+        Avg = total/countt;
         Diff = Score - Avg;
     }
 

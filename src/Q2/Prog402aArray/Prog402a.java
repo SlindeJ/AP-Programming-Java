@@ -12,6 +12,7 @@ public class Prog402a {
             int count = 0;
             double summ = 0;
             double avg = 0;
+            System.out.println("ID\tScore\tDiff");
             while (input.hasNext()) {
                 int id = input.nextInt();
                 int score = input.nextInt();
@@ -21,10 +22,12 @@ public class Prog402a {
                 count++;
             }
             for (int lcv = 0; lcv < count; lcv++) {
-                nou[lcv].calc();
+
+            }
+            for (int lcv = 0; lcv < count; lcv++) {
+                nou[lcv].calc(summ, count);
                 nou[lcv].toFString();
             }
-
 
         } catch (IOException e) {
             System.out.println("Can't find data file!");
