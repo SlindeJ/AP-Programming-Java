@@ -18,5 +18,20 @@ public class LP3_9Cl {
         int tmonth = input.nextInt();
         System.out.print("Day: ");
         int tday = input.nextInt();
+        Cl3_9 helper = new Cl3_9(byear, bmonth, bday, tyear, tmonth, tday);
+        helper.calc();
+        System.out.println(helper.toString());
     }
 }
+/*
+Enter your birthdate:
+Year: 1997
+Month: 2
+Day: 12
+Enter today's date:
+Year: 2012
+Month: 8
+Day: 3
+You have been alive for 5646 days.
+You have slept for 45168 hours.
+ */
