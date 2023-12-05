@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.Scanner;
 import java.util.ArrayList; // have to import ArrayList
 
-public class Prog602bAList {
+public class Prog602b {
     public static void main(String[] args) {
         try {
             Scanner input = new Scanner(new File("Langdat/prog602b.dat")); // remember to replace with new data file
