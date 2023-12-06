@@ -14,7 +14,7 @@ public class Cl3_14 {
     public void addVotes(int aw, int mar) {
         awVotes += aw;
         marVotes += mar;
-        totalVotes += awVotes + marVotes;
+        totalVotes += aw + mar;
     }
 
     public int getAwVotes() { return awVotes; }
