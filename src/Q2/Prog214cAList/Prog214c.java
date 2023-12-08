@@ -1,16 +1,26 @@
 package Q2.Prog214cAList;
+import java.io.File;
+import java.io.IOException;
 import java.util.*;
 
 public class Prog214c {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        System.out.print("Gallons of gasoline purchased: ");
-        double gallons = input.nextDouble();
-        System.out.print("Type of gas purchased (R, P, H): ");
-        String gasType = input.nextLine();
-        System.out.print("Would you like a car wash? (Y/N): ");
-        String carWashAnswer = input.nextLine();
-        boolean carWash = false;
-        if (carWashAnswer.equals("Y")) { carWash = true; }
+        try {
+            Scanner input = new Scanner(new File("Langdat/prog214c.dat")); // remember to replace with new data file
+            ArrayList<AList214c> list = new ArrayList<>();
+
+            while (input.hasNext()) {
+                boolean carWash = false;
+                String gasType = input.nextLine();
+                double gallons = input.nextDouble();
+                String carWashAnswer = input.nextLine();
+                if (carWashAnswer.equals("Y")) { carWash = true; }
+                AList214c helper = new AList214c(gallons, gasType, carWash);
+                list.add(helper);
+            }
+
+        } catch (IOException e) {
+            System.out.println("Can't find data file!");
+        }
     }
 }
