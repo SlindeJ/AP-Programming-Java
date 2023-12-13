@@ -30,6 +30,6 @@ public class AList214c {
         finalCost += gasCost;
     }
 
-    public void finprint() { } // maybe final print
-
+    public void finprint() {
+        System.out.printf("Gallons: %.2f\tGas Type: %s\tCar wash: %s\tCost of gas: %.2f\tFinal cost: %.2f\n", myGallons, myGasType, myCarWash, gasCost, finalCost); } // maybe final print
 }
