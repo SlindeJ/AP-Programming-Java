@@ -11,6 +11,8 @@ public class AList215h {
     private double eightScore;
     private double avgScore;
     private double totalScore;
+    public Double[] myarray;
+    private int arrayLength;
 
     public AList215h(double score1, double score2, double score3, double score4, double score5, double score6, double score7, double score8) {
         oneScore = score1;
@@ -23,10 +25,32 @@ public class AList215h {
         eightScore = score8;
         avgScore = 0;
         totalScore = 0;
-        int[] myarray = {1};    // can literally use an array of the scores and iterate through it in calc
+        Double[] myarray = { score1, score2, score3, score4, score5, score6, score7, score8};    // can literally use an array of the scores and iterate through it in calc
+        arrayLength += myarray.length;
     }
 
     public void calc() {
+        Double max = 0.0;
+        Double min = 100000000.0;
+        for (int lcv = 0; lcv < arrayLength; lcv++) {
+            totalScore += myarray[lcv];
+            if (myarray[lcv] > max) {
+                max = myarray[lcv];
+            } if (myarray[lcv] < min) {
+                min = myarray[lcv];
+            }
+        }
+        avgScore = (totalScore - max - min) / 6;
+    }
 
+    public void getAvgScore() {
+        System.out.printf("%.2f %.2f %.2f %.2f %.2f %.2f %.2f %.2f = %.2f\n", oneScore, twoScore, threeScore, fourScore, fiveScore, sixScore, sevenScore, eightScore, avgScore);
     }
 }
+
+
+
+
+
+
+

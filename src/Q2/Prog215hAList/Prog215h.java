@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class Prog215h {
     public static void main(String[] args) {
         try {
-            Scanner input = new Scanner(new File("Langdat/prog215h.dat")); // remember to replace with new data file
+            Scanner input = new Scanner(new File("Langdat/prog215h.txt")); // remember to replace with new data file
             ArrayList<AList215h> list = new ArrayList<>();
 
             while (input.hasNext()) {
@@ -20,9 +20,19 @@ public class Prog215h {
                 double sixScore = input.nextDouble();
                 double sevenScore = input.nextDouble();
                 double eightScore = input.nextDouble();
+                AList215h helper = new AList215h(oneScore, twoScore, threeScore, fourScore, fiveScore, sixScore, sevenScore, eightScore);
+                list.add(helper);
+            }
+            for (int lcv = 0; lcv < list.size(); lcv++) {
+                AList215h helper = list.get(lcv);
+                helper.calc();
+                helper.getAvgScore();
             }
         } catch (IOException e) {
             System.out.println("Can't find data file!");
         }
     }
 }
+/*
+
+ */
