@@ -98,9 +98,6 @@ public class BigArray2 {
                 System.out.print(cats[lcv].getCost() + " ");
             }
             System.out.println();
-            for (Cat cat : cats) {
-
-            }
             // 12.
             System.out.println("\nThe cats being put on a diet are: ");
             for (int lcv = 0; lcv < numCats; lcv++) {
