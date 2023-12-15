@@ -10,10 +10,12 @@ public class AList215i {
         vehicleNumber = vnum;
         gallonsGas = gals;
         milesDriven = midri;
-        milesPerGallon = 0;
+        milesPerGallon = midri / gals;
     }
 
-    public void calc() {
 
-    }
+    public double getMPG() { return milesPerGallon; }
+    public int getVehicleNumber() { return vehicleNumber; }
+    public double getGallonsGas() { return gallonsGas; }
+    public double getMilesDriven() { return milesDriven; }
 }
