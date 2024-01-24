@@ -18,6 +18,19 @@ public class Prog465h {
                         mat[row][col] = input.nextInt(); }
                 }
                 // maybe enhanced for loop?
+                int count = 0;
+                for (int[] row : mat) {
+                    for (int n : row) {
+                        if (n != 0) { count++; }
+                    }
+                }
+                if ((count * 3) > (r * c)) {
+                    // original matrix is abundant
+                }
+                else if ((count * 3) <= (r * c)) {
+                    // original matrix is sparse
+                    // make rmat (reduced matrix)
+                } // do also equal here probably
             }
 
         } catch (IOException e) {
