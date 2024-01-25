@@ -28,6 +28,7 @@ public class Prog465h {
                     // original matrix is abundant
                 }
                 else if ((count * 3) <= (r * c)) {
+
                     // original matrix is sparse
                     // make rmat (reduced matrix)
                 } // do also equal here probably
