@@ -30,14 +30,14 @@ public class Prog465h {
                 else if ((count * 3) <= (r * c)) {
 
                     // original matrix is sparse
-                    // make rmat (reduced matrix)
-                    int[][] rmat = new int[count][3]; 
+                    int[][] rmat = new int[count][3]; // reduced matrix
                     int rrow = 0; // reduced rows
                     for (int row = 0; row < mat.length; row++) {
                         for (int col = 0; col < mat[0].length; col++) {
                         if (mat[row][col] != 0) { rmat[rrow][2] = mat[row][col]; rmat[rrow][0] = row+1; rmat[rrow][1] = col+1; rrow++; } 
                         }
                     }
+                    // rmat made
                 } // do also equal here probably
             }
 
