@@ -24,6 +24,15 @@ public class Prog465h {
                         if (n != 0) { count++; }
                     }
                 }
+                //
+                System.out.println();
+                for (int[] row : mat) {
+                    for (int n : row) {
+                        System.out.print(n + " ");
+                    }
+                    System.out.println();
+                }
+                //
                 if ((count * 3) > (r * c)) {
                     // original matrix is abundant
                 }
