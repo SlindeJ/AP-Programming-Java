@@ -53,9 +53,11 @@ public class Prog702p {
                 }
                 if (x instanceof wallies) {
                     totSteps += ((wallies)x).getSteps();
+                    numWal++;
                 }
                 if (x instanceof beepers) {
                     allExtras += ((beepers)x).getxWord();
+                    numBeep++;
                 }
             }
             // other easy vars after this (avgWord = allExtras.length / numWal) ish
@@ -63,7 +65,7 @@ public class Prog702p {
 
             System.out.println("The average value of the Hicca fur is: " + avgFur);
             System.out.println("The average number of steps taken by the Wallies is: " + totSteps);
-            System.out.println("The average size of the Beepers words is: " + avgWord);
+            System.out.println("The average size of the Beepers words is: " + avgWord / (double)numBeep);
         } catch (IOException e) {
             System.out.println("Can't find data file!");
         }
