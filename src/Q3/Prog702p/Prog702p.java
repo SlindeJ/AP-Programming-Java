@@ -60,14 +60,46 @@ public class Prog702p {
                     numBeep++;
                 }
             }
-            // other easy vars after this (avgWord = allExtras.length / numWal) ish
-            int avgWord = (int)(allExtras.length() / (double)numWal + .5);
-
+            // other easy vars after this
+            double avgWord = (allExtras.length() / (double)numBeep);
+            String eachIndiv = allExtras;
+            for (int lcv = 0; lcv < eachIndiv.length(); lcv++) {
+                char cur = eachIndiv.charAt(lcv);
+                while (eachIndiv.indexOf(cur) != eachIndiv.lastIndexOf(cur)) {
+                    eachIndiv = eachIndiv.substring(0, eachIndiv.lastIndexOf(cur)) + eachIndiv.substring(eachIndiv.lastIndexOf(cur) + 1);
+                }
+            }
+            int maxAppears = 0;
+            int curAppears = 0;
+            char mostCommon = ' ';
+            for (int lcv = 0; lcv < eachIndiv.length(); lcv++) {
+                char cur = eachIndiv.charAt(lcv);
+                while (eachIndiv.indexOf(cur) != eachIndiv.lastIndexOf(cur)) {
+                    eachIndiv = eachIndiv.substring(0, eachIndiv.lastIndexOf(cur)) + eachIndiv.substring(eachIndiv.lastIndexOf(cur) + 1);
+                }
+            }
+            for (int lcv = 0; lcv < eachIndiv.length(); lcv++) {
+                char cur = eachIndiv.charAt(lcv);
+                for (int lcv2 = 0; lcv2 < allExtras.length(); lcv2++) {
+                    if (cur == allExtras.charAt(lcv2)) {
+                        curAppears++;
+                        if (curAppears > maxAppears) { maxAppears = curAppears; mostCommon = cur; }
+                    }
+                }
+                curAppears = 0;
+            }
             System.out.println("The average value of the Hicca fur is: " + avgFur);
             System.out.println("The average number of steps taken by the Wallies is: " + totSteps);
-            System.out.println("The average size of the Beepers words is: " + avgWord / (double)numBeep);
+            System.out.println("The average size of the Beepers words is: " + avgWord);
+            System.out.println("The most common letter in all beeper words is: " + mostCommon);
         } catch (IOException e) {
             System.out.println("Can't find data file!");
         }
     }
 }
+/*
+The average value of the Hicca fur is: 18.35
+The average number of steps taken by the Wallies is: 316
+The average size of the Beepers words is: 7.25
+The most common letter in all beeper words is: e
+ */
