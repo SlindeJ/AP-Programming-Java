@@ -1,9 +1,9 @@
 package Q3.Prog702q;
 
 public class Vehicle implements names {
-    private String name;
-    private int tires;
-    private double value;
+    protected String name;
+    protected int tires;
+    protected double value;
 
     public Vehicle(String name, int tires, double value) {
         this.name = name;
