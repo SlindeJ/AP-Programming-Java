@@ -35,7 +35,7 @@ public class Prog477a {
             for (int[] row : mat) {
                 System.out.print("ABCDF ");
                 for (int n : row) {
-                    System.out.print(n + " ");
+                    System.out.print(" \t" + n);
                 }
                 System.out.println();
             }
