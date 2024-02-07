@@ -45,3 +45,12 @@ public class Prog477a {
         }
     }
 }
+/*
+Grade	Male	Female	Total
+ABCDF  	2 	4 	6
+ABCDF  	4 	4 	8
+ABCDF  	4 	7 	11
+ABCDF  	2 	3 	5
+ABCDF  	3 	0 	3
+Totals:	15	18	33
+ */
