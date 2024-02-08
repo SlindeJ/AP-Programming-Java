@@ -2,13 +2,19 @@ package Q3;
 import java.util.*;
 
 public class Prog607a {
-    public static String deCode(String code) {
 
-        return "";
+    // months A-L 
+    // date Q-Z
+    // year Z-A (Z is 1) + 1970
+    public static String deCode(String code) {
+        String month = code.substring(0, 1); 
+        String day = code.substring(1, 3); 
+        String year = code.substring(3);  
+        return month + " " + day + " " + year; 
     }
     public static String enCode(String code) {
-
-        return "";
+        String[] arr = code.split("/", 3); 
+        return arr[0] + " " + arr[1] + " " + arr[2]; 
     }
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
