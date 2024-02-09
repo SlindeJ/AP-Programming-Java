@@ -9,12 +9,24 @@ public class Prog607a {
     public static String deCode(String code) {
         String month = code.substring(0, 1); 
         String day = code.substring(1, 3); 
-        String year = code.substring(3);  
+        String year = code.substring(3);
+
+        // "ABCDEFGHIJKL"
+        String[] months = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"};
+        String[] dates = {"Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
+        // Z = 1, A = 26
+        String[] years = {"Z" ,"Y" ,"X" ,"W" ,"V" ,"U" ,"T" ,"S" ,"R" ,"Q" ,"P" ,"O" ,"N" ,"M" ,"L" ,"K" ,"J" ,"I" ,"H" ,"G" ,"F" ,"E" ,"D" ,"C" ,"B" ,"A"};
+        for (int i = 0; i < months.length; i++) {
+            if (months[i].equals(months)) { month = toString(i+1); } // fix this
+        }
         return month + " " + day + " " + year; 
     }
     public static String enCode(String code) {
-        String[] arr = code.split("/", 3); 
-        return arr[0] + " " + arr[1] + " " + arr[2]; 
+        String[] arr = code.split("/", 3);
+        String month = arr[0];
+        String day = arr[1];
+        String year = arr[2];
+        return month + " " + day + " " + year;
     }
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
