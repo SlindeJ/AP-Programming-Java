@@ -48,7 +48,7 @@ public class Prog607a {
         int m = Integer.valueOf(month) - 1;
         int d1 = Integer.valueOf(day1) - 1;
         int d2 = Integer.valueOf(day2) - 1;
-        int y = Integer.valueOf(year) - 1;
+        int y = Integer.valueOf(year) - 1971;
         month = months[m];
         day1 = dates[d1];
         day2 = dates[d2];
@@ -79,3 +79,22 @@ public class Prog607a {
         }
     }
 }
+/*
+0) Quit
+1) Encode Date
+2) Decode Date
+
+Select an option: 1
+Enter a date (m/d/y):
+9/14/1983
+I QT N
+
+0) Quit
+1) Encode Date
+2) Decode Date
+
+Select an option: 2
+Enter the code:
+AOQV
+1 O1 1975
+ */

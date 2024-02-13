@@ -17,11 +17,11 @@ public class Prog408a {
                 count++;
             }
 
-            list = SortingAlgs.insertionSort(list);
-            System.out.println("ID\tScore");
-            for (Cl408a item : list) {
-                System.out.print(item.getID() + "\t" + item.getScore());
-            }
+//            list = SortingAlgs.insertionSort(list);
+//            System.out.println("ID\tScore");
+//            for (Cl408a item : list) {
+//                System.out.print(item.getID() + "\t" + item.getScore());
+//            }
         } catch (IOException e) {
             System.out.println("Can't find data file!");
         }

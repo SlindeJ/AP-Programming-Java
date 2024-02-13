@@ -3,6 +3,7 @@ package Q3.Prog703s;
 import Q3.Prog702q.Bus;
 import Q3.Prog702q.Car;
 import Q3.Prog702q.Truck;
+import Q3.Prog702q.Vehicle;
 //import Q3.Prog702q.Computer;      // check this out
 
 import java.io.File;
@@ -35,6 +36,23 @@ public class Prog703s {
                     Computer v = new Linux(name, number, value, code);
                     list.add(v);
                 }
+
+                int GoG = 0; // Green or Gold (apple computers)
+                int ver7 = 0; // windows on ver. 7
+                int endin5 = 0; // linux codes that end in 5
+                //
+                for (Computer v : list) {
+                    if (v instanceof Apple) {
+                        if (((Apple)v).getColor().equals("Green") || GoG == 1){ // fix
+
+                        }
+                    }
+                    if (v instanceof Windows) {
+                    }
+                    if (v instanceof Linux) {
+                    }
+                }
+                //
             }
         } catch (IOException e) {
             System.out.println("Can't find data file!");
