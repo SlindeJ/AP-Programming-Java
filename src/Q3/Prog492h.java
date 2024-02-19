@@ -8,9 +8,14 @@ import java.util.*;
 public class Prog492h {
     public static String[][] newGen(String[][] oldGen) {
         String[][] workwith = new String[32][32];
-        for (int row = 1; row < oldGen.length; row++) {
-            for (int col = 1; col < oldGen[0].length; col++) {
-                workwith[row][col] = oldGen[row][col]; }        // fix here, missing a row/col of oldGen
+        for (int row = 0; row < oldGen.length; row++) {
+            for (int col = 0; col < oldGen[0].length; col++) {
+                workwith[row+1][col+1] = oldGen[row][col]; }
+        }
+        for (int row = 0; row < oldGen.length; row++) {
+            for (int col = 0; col < oldGen[0].length; col++) {
+                //workwith[row+1][col+1];
+            }
         }
         return workwith;
     }
