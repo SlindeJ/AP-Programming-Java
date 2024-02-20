@@ -29,7 +29,7 @@ public class Prog505w {
                     int milk = input.nextInt();
                     int hayEaten = input.nextInt();
                     int cornEaten = input.nextInt();
-                    Cow wow = new Cow(name, weight, milk, hayEaten, cornEaten);
+                    Cow wow = new Cow(name, weight, milk, cornEaten, hayEaten);
                     animal.add(wow);
                     hay -= hayEaten;
                     corn -= cornEaten;
@@ -46,7 +46,7 @@ public class Prog505w {
                     int cornEaten = input.nextInt();
                     int rides = input.nextInt();
                     double rideCost = input.nextDouble();
-                    Horse Aarrrrrrr = new Horse(name, weight, hayEaten, cornEaten, rides, rideCost);
+                    Horse Aarrrrrrr = new Horse(name, weight, cornEaten, hayEaten, rides, rideCost);
                     animal.add(Aarrrrrrr);
                     hay -= hayEaten;
                     corn -= cornEaten;
@@ -55,8 +55,25 @@ public class Prog505w {
 
             // TODO: report income of the day, cumulative weight of all animals, -
             //  if there's enough food to feed all animals, and the cow that makes the most money
+            // income of the day
 
+            // cumulative weight of all animals
 
+            // if there's enough food to feed all animals
+
+            // cow that makes most amount of money
+            double maxCowValue = Double.MIN_VALUE;
+            int maxCowIndex = 0;
+            for (int lcv = 0; lcv < animal.size(); lcv++) {
+                if (animal.get(lcv) instanceof Cow) {
+                    Cow Xow = (Cow)animal.get(lcv);
+                    if (Xow.value(cornCost, hayCost) < maxCowValue) {
+                        maxCowValue = Xow.value(cornCost, hayCost);
+                        maxCowIndex = lcv;
+                    }
+                }
+            }
+            System.out.printf("Cow %s makes the most amount of money\n", animal.get(maxCowIndex).getName());
             // horse that makes least amount of money
             double minHorseValue = Double.MAX_VALUE;
             int minHorseIndex = 0;
@@ -69,7 +86,6 @@ public class Prog505w {
                     }
                 }
             }
-
             System.out.printf("Horse %s makes the least amount of money\n", animal.get(minHorseIndex).getName());
 
         } catch (IOException e) {
