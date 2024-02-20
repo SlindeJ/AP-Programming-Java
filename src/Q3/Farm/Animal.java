@@ -13,7 +13,7 @@ public abstract class Animal {
         myNumHayBales = hay;
     }
 
-    public abstract double value(double cornCost, double hayCost);
+    public abstract double value(double cornCost, double hayCost);  // no default implementation
 
     public String getName()     { return myName; }
     public int getWeight()      { return myWeight; }
