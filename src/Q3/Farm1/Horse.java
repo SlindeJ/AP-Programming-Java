@@ -1,4 +1,4 @@
-package Q3.Farm;
+package Q3.Farm1;
 
 public class Horse extends Animal {
     private int myNumRides;

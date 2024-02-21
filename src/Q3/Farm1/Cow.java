@@ -1,4 +1,4 @@
-package Q3.Farm;
+package Q3.Farm1;
 
 public class Cow extends Animal {
     private static final double MILK_PRICE_LB = 0.20;   // static makes it across all cows and never changes
