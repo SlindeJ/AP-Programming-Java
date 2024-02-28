@@ -18,39 +18,38 @@ public class Prog505t {
             int corn = input.nextInt();
             double cornCost = input.nextDouble();
 
-            int cows = input.nextInt();
+            int cows = input.nextInt(); // number of cows to read in
 
             for (int r = 0; r < cows; r++) {
-                String name = "cow wow" + r;
                 int weight = input.nextInt();
                 int milk = input.nextInt();
                 int hayEaten = input.nextInt();
                 int cornEaten = input.nextInt();
-                Cow wow = new Cow(name, weight, milk, cornEaten, hayEaten);
+                Cow wow = new Cow("Cow Wow" + r, weight, milk, cornEaten, hayEaten);
                 animal.add(wow);
                 hay -= hayEaten;
                 corn -= cornEaten;
             }
 
-            int horseRows = input.nextInt();
-            int horsePens = input.nextInt();
-            for (int r = 0; r < horseRows; r++) {       // rows
-                for (int p = 0; p < horsePens; p++) {   // pens
-                    String name = input.next();
-                    int weight = input.nextInt();
-                    int hayEaten = input.nextInt();
-                    int cornEaten = input.nextInt();
-                    int rides = input.nextInt();
-                    double rideCost = input.nextDouble();
-                    Horse Aarrrrrrr = new Horse(name, weight, cornEaten, hayEaten, rides, rideCost);
-                    animal.add(Aarrrrrrr);
-                    hay -= hayEaten;
-                    corn -= cornEaten;
-                }
+            int horses = input.nextInt(); // number of horses to read in
+
+            for (int r = 0; r < horses; r++) {
+                int weight = input.nextInt();
+                int hayEaten = input.nextInt();
+                int cornEaten = input.nextInt();
+                int rides = input.nextInt();
+                double rideCost = input.nextDouble();
+                Horse Aarrrrrrr = new Horse("☹" + r, weight, cornEaten, hayEaten, rides, rideCost);
+                animal.add(Aarrrrrrr);
+                hay -= hayEaten;
+                corn -= cornEaten;
             }
 
-            // TODO: report income of the day, cumulative weight of all animals, -
-            //  if there's enough food to feed all animals, and the cow that makes the most money
+            // TODO: report income of the day, Report the cost of feeding the animals for a day, cumulative weight of all animals, -
+            //  if there's enough food to feed all animals, if so, feed all the animals and report how many bales of hay and cobs -
+            //  of corn are left in the barn.  If there is not enough food for ALL the animals, none of the animals get fed ☹ -
+            //  report that there is insufficient food to feed the animals and request an immediate shipment of hay and corn for -
+            //  the amount of needed of each MORE HERE...
             // income of the day
             double tot_income = 0;
             for (Animal a : animal) {
@@ -64,7 +63,7 @@ public class Prog505t {
             }
             System.out.println("The total weight of all the animals is: " + tot_weight);
             // if there's enough food to feed all animals
-            System.out.println("There is " + hay + " left and " + corn + " left. So there is enough food to feed all animals");
+            System.out.println("There is " + hay + "hay left and " + corn + "corn left. So there is enough food to feed all animals");
             // cow that makes most amount of money
             double maxCowValue = Double.MIN_VALUE;
             int maxCowIndex = 0;

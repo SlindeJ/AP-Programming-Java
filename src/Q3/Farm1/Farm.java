@@ -9,4 +9,6 @@ public abstract class Farm implements IFarm {
     private int myNumCorn;
     private double myHayCost;
     private double myCornCost;
+
+
 }
