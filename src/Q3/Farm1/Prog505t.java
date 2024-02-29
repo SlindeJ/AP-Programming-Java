@@ -11,6 +11,8 @@ public class Prog505t {
         try {
             Scanner input = new Scanner(new File("Langdat/prog505t.dat")); // remember to replace with new data file
             List<Animal> animal = new ArrayList<>();
+            List<Cow> cow = new ArrayList<>();
+            List<Horse> horse = new ArrayList<>();
             // need to change, copied from 505w
 
             int hay = input.nextInt();
@@ -27,6 +29,7 @@ public class Prog505t {
                 int cornEaten = input.nextInt();
                 Cow wow = new Cow("Cow Wow" + r, weight, milk, cornEaten, hayEaten);
                 animal.add(wow);
+                cow.add(wow);
                 hay -= hayEaten;
                 corn -= cornEaten;
             }
@@ -41,6 +44,7 @@ public class Prog505t {
                 double rideCost = input.nextDouble();
                 Horse Aarrrrrrr = new Horse("☹" + r, weight, cornEaten, hayEaten, rides, rideCost);
                 animal.add(Aarrrrrrr);
+                horse.add(Aarrrrrrr);
                 hay -= hayEaten;
                 corn -= cornEaten;
             }
@@ -49,13 +53,18 @@ public class Prog505t {
             //  if there's enough food to feed all animals, if so, feed all the animals and report how many bales of hay and cobs -
             //  of corn are left in the barn.  If there is not enough food for ALL the animals, none of the animals get fed ☹ -
             //  report that there is insufficient food to feed the animals and request an immediate shipment of hay and corn for -
-            //  the amount of needed of each MORE HERE...
+            //  the amount of needed of each. Sell off the 3 cows that generate the lowest amount of milk. Sell off the two -
+            //  horses that generate the lowest amount of ride income. Change the first cow.   The cow has a weight of 1250, -
+            //  followed by 80 pounds of milk produced per day, followed by the number of 3 hay bales eaten each day, followed -
+            //  by 4 corncobs eaten each day. Report the total number of cows and horses on the farm.
             // income of the day
             double tot_income = 0;
             for (Animal a : animal) {
                 tot_income += a.value(cornCost, hayCost);
             }
             System.out.println("The total income for the day is: " + tot_income);
+            // cost of feeding all animals for a day
+
             // cumulative weight of all animals
             int tot_weight = 0;
             for (Animal x : animal) {
@@ -63,33 +72,16 @@ public class Prog505t {
             }
             System.out.println("The total weight of all the animals is: " + tot_weight);
             // if there's enough food to feed all animals
-            System.out.println("There is " + hay + "hay left and " + corn + "corn left. So there is enough food to feed all animals");
-            // cow that makes most amount of money
-            double maxCowValue = Double.MIN_VALUE;
-            int maxCowIndex = 0;
-            for (int lcv = 0; lcv < animal.size(); lcv++) {
-                if (animal.get(lcv) instanceof Cow) {
-                    Cow Xow = (Cow)animal.get(lcv);
-                    if (Xow.value(cornCost, hayCost) < maxCowValue) {
-                        maxCowValue = Xow.value(cornCost, hayCost);
-                        maxCowIndex = lcv;
-                    }
-                }
-            }
-            System.out.printf("Cow %s makes the most amount of money\n", animal.get(maxCowIndex).getName());
-            // horse that makes least amount of money
-            double minHorseValue = Double.MAX_VALUE;
-            int minHorseIndex = 0;
-            for (int lcv = 0; lcv < animal.size(); lcv++) {
-                if (animal.get(lcv) instanceof Horse) {
-                    Horse horse = (Horse)animal.get(lcv);
-                    if (horse.value(cornCost, hayCost) < minHorseValue) {
-                        minHorseValue = horse.value(cornCost, hayCost);
-                        minHorseIndex = lcv;
-                    }
-                }
-            }
-            System.out.printf("Horse %s makes the least amount of money\n", animal.get(minHorseIndex).getName());
+            System.out.println("There is " + hay + " hay left and " + corn + " corn left. So there is enough food to feed all animals");
+
+            // Sell off the 3 cows that generate the lowest amount of milk
+
+            // Sell off the two horses that generate the lowest amount of ride income
+
+            // Change the first cow. The cow has a weight of 1250, followed by 80 pounds of milk produced per day,
+            // followed by the number of 3 hay bales eaten each day, followed by 4 corncobs eaten each day.
+
+            // Report the total number of cows and horses on the farm
 
         } catch (IOException e) {
             System.out.println("Can't find data file!");
