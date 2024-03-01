@@ -33,7 +33,7 @@ public abstract class Farm implements IFarm {
     /** Calculates the value of the milk produced by the
      *  cows price for each cow's milk is the same per pound */
     private double cowIncome(double perPound)  {
-        return 0; // use getmilkcows()
+        return 0; // use getmilk()
     }
 
     /** Calculates the value of the rides given by the horses

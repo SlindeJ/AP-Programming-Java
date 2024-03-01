@@ -19,6 +19,8 @@ public class Prog505t {
             double hayCost = input.nextDouble();
             int corn = input.nextInt();
             double cornCost = input.nextDouble();
+            int totHayEaten = 0;
+            int totCornEaten = 0;
 
             int cows = input.nextInt(); // number of cows to read in
 
@@ -32,6 +34,8 @@ public class Prog505t {
                 cow.add(wow);
                 hay -= hayEaten;
                 corn -= cornEaten;
+                totHayEaten += hayEaten;
+                totCornEaten += cornEaten;
             }
 
             int horses = input.nextInt(); // number of horses to read in
@@ -47,6 +51,8 @@ public class Prog505t {
                 horse.add(Aarrrrrrr);
                 hay -= hayEaten;
                 corn -= cornEaten;
+                totHayEaten += hayEaten;
+                totCornEaten += cornEaten;
             }
 
             // TODO: report income of the day, Report the cost of feeding the animals for a day, cumulative weight of all animals, -
@@ -62,9 +68,9 @@ public class Prog505t {
             for (Animal a : animal) {
                 tot_income += a.value(cornCost, hayCost);
             }
-            System.out.println("The total income for the day is: " + tot_income);
+            System.out.println("The total income for the day is: $" + tot_income);
             // cost of feeding all animals for a day
-
+            System.out.println("It costs $" + ((totCornEaten * cornCost) + (totHayEaten * hayCost)) + " to feed all the animals for a day");
             // cumulative weight of all animals
             int tot_weight = 0;
             for (Animal x : animal) {
@@ -73,9 +79,23 @@ public class Prog505t {
             System.out.println("The total weight of all the animals is: " + tot_weight);
             // if there's enough food to feed all animals
             System.out.println("There is " + hay + " hay left and " + corn + " corn left. So there is enough food to feed all animals");
-
             // Sell off the 3 cows that generate the lowest amount of milk
+            int slackers = 3;
+            double minMilk = cow.get(0).getMilk();
+            int slackerPos = 0;
+            while (slackers > 0) {
+                for (int milker = 0; milker < animal.size(); milker++) {
+                    if (animal.get(milker) instanceof Cow) {
+                        if (((Cow)animal.get(milker)).getMilk() < minMilk) {
+                            minMilk = ((Cow) animal.get(milker)).getMilk();
+                            slackerPos = milker;
+                        }
+                    }
+                }
+                animal.remove(slackerPos);
+                slackers--;
 
+            }
             // Sell off the two horses that generate the lowest amount of ride income
 
             // Change the first cow. The cow has a weight of 1250, followed by 80 pounds of milk produced per day,
