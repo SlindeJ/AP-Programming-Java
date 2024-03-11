@@ -94,10 +94,23 @@ public class Prog505t {
                 }
                 animal.remove(slackerPos);
                 slackers--;
-
             }
             // Sell off the two horses that generate the lowest amount of ride income
-
+            int rougher = 2;
+            double minRideIncome = horse.get(0).getRideCost() * horse.get(0).getRides();
+            int rougherPos = 0;
+            while (rougher > 0) {
+                for (int rider = 0; rider < animal.size(); rider++) {
+                    if (animal.get(rider) instanceof Horse) {
+                        if ((horse.get(rider).getRideCost() * horse.get(rider).getRides() < minRideIncome)) {
+                            minRideIncome = 0;  // fix here
+                            rougherPos = rider;
+                        }
+                    }
+                }
+                animal.remove(rougherPos);
+                rougher--;
+            }
             // Change the first cow. The cow has a weight of 1250, followed by 80 pounds of milk produced per day,
             // followed by the number of 3 hay bales eaten each day, followed by 4 corncobs eaten each day.
 
