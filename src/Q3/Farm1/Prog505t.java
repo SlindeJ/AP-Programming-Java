@@ -102,8 +102,8 @@ public class Prog505t {
             while (rougher > 0) {
                 for (int rider = 0; rider < animal.size(); rider++) {
                     if (animal.get(rider) instanceof Horse) {
-                        if ((horse.get(rider).getRideCost() * horse.get(rider).getRides() < minRideIncome)) {
-                            minRideIncome = 0;  // fix here
+                        if ((((Horse)animal.get(rider)).getRideCost() * ((Horse)animal.get(rider)).getRides() < minRideIncome)) {
+                            minRideIncome = ((Horse)animal.get(rider)).getRideCost() * ((Horse)animal.get(rider)).getRides();  // fix here
                             rougherPos = rider;
                         }
                     }
@@ -113,11 +113,41 @@ public class Prog505t {
             }
             // Change the first cow. The cow has a weight of 1250, followed by 80 pounds of milk produced per day,
             // followed by the number of 3 hay bales eaten each day, followed by 4 corncobs eaten each day.
-
+            boolean newCow = true;
+            int i = 0;
+            while (newCow) {
+                if (animal.get(i) instanceof Cow) {
+                    Cow e = new Cow("newCow", 1250, 80, 3, 4);
+                    animal.add(i, e);
+                    newCow = false;
+                }
+                i++;
+            }
             // Report the total number of cows and horses on the farm
-
+            int tot_Cows = 0;
+            int tot_Horses = 0;
+            for (Animal a : animal) {
+                if (a instanceof Horse) { tot_Horses++; }
+                if (a instanceof Cow) { tot_Cows++; }
+            }
+            System.out.println("There are " + tot_Cows + " Cows on the farm and " + tot_Horses + " Horses on the farm");
         } catch (IOException e) {
             System.out.println("Can't find data file!");
         }
     }
 }
+/*
+The total income for the day is: $-376.85
+It costs $180.5 to feed all the animals for a day
+The total weight of all the animals is: 42835
+There is 939 hay left and 2420 corn left. So there is enough food to feed all animals
+There are 11 Cows on the farm and 10 Horses on the farm
+ */
+
+
+
+
+
+
+
+
