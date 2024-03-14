@@ -8,16 +8,22 @@ import java.util.*;
 public class Prog492h {
     public static String[][] newGen(String[][] oldGen) {
         String[][] workwith = new String[32][32];
-        for (int row = 0; row < oldGen.length; row++) {
+        for (int row = 0; row < oldGen.length; row++) {     // this is putting the oldgen info into the workwith array
             for (int col = 0; col < oldGen[0].length; col++) {
                 workwith[row+1][col+1] = oldGen[row][col]; }
         }
-        for (int row = 0; row < oldGen.length; row++) {
+        for (int row = 0; row < oldGen.length; row++) {     // this is altering the workwith array data (not the edges though)
             for (int col = 0; col < oldGen[0].length; col++) {
-                //workwith[row+1][col+1];
+                workwith[row+1][col+1] = "e";
             }
         }
         return workwith;
+    }
+
+    public static String LiveOrDie(tl, tm, tr, ml, mm, mr, bl, bm, br) {    // top left, top middle, top right, middle, and bottom...
+
+
+        return ".";
     }
 
     public static void main(String[] args) {
