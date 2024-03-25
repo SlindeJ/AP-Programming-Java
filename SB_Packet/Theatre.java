@@ -21,7 +21,6 @@ public boolean twoTogether() {
 // c
 public int findAdjacent(int row, int seatsNeeded) {
     int adj = -1; 
-    // seats[row][seats needed in a row]
     boolean rows = false; 
     for (int i = 0; i <= SEATS_PER_ROW - seatsNeeded; i++) {
         rows = true; 
