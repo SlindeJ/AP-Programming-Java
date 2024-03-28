@@ -20,11 +20,11 @@ public class Prog492h {
         return workwith;
     }
 
-    public static String LiveOrDie(tl, tm, tr, ml, mm, mr, bl, bm, br) {    // top left, top middle, top right, middle, and bottom...
-
-
-        return ".";
-    }
+//    public static String LiveOrDie(tl, tm, tr, ml, mm, mr, bl, bm, br) {    // top left, top middle, top right, middle, and bottom...
+//continue here
+//
+//        return ".";
+//    }
 
     public static void main(String[] args) {
         try {
