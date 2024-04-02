@@ -12,8 +12,12 @@ public class MSOE2015_7 {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in); 
-        System.out.println("Please enter the number: ");
+        System.out.print("Please enter the number: ");
         int num = input.nextInt(); 
         System.out.println("The Dedekind function number is: " + (int)(num * dedekind(num))); 
     }
 }
+/*
+Please enter the number: 30
+The Dedekind function number is: 72
+*/
