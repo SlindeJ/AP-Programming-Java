@@ -1,4 +1,4 @@
-package VirtualPetLab;
+   package VirtualPetLab;
 import javax.swing.*;
 import java.awt.*;
 import java.util.Base64;
