@@ -35,8 +35,16 @@ public abstract class Pet {
     public abstract void sleep();
 
     // TODO: Add a public method to return the pet's status as a string
-
+    public String getStatus() { return "Hunger: " + this.hunger + " Energy: " + this.energy + " Happiness: " + this.happiness; }
     // It may also be help to make a public/protected "clampAttributes()" method to ensure that the pet's attributes do
     // not exceed their maximum values or drop below 0 when feeding/playing/sleeping. Call this method using 'super'.
+    public void updateStatus() { 
+        if (this.hunger > 100) this.hunger = 100; 
+        if (this.happiness > 100) this.happiness = 100;
+        if (this.energy > 100) this.energy = 100;
+        if (this.hunger < 0) this.hunger = 0; 
+        if (this.happiness < 0) this.happiness = 0; 
+        if (this.energy < 0) this.energy = 0; 
+    }
 }
 
