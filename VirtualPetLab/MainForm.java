@@ -38,6 +38,9 @@ public class MainForm extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // TODO: Implement feeding the selected pet
+                Pet p = getSelectedPet(petSelectorComboBox.getSelectedItem());
+                p.feed();
+                p.updateStatus();
             }
         });
 
@@ -46,6 +49,9 @@ public class MainForm extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // TODO: Implement playing with the selected pet
+                Pet p = getSelectedPet(petSelectorComboBox.getSelectedItem());
+                p.play();
+                p.updateStatus();
             }
         });
 
@@ -54,6 +60,9 @@ public class MainForm extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // TODO: Implement putting the selected pet to sleep
+                Pet p = getSelectedPet(petSelectorComboBox.getSelectedItem());
+                p.sleep();
+                p.updateStatus();
             }
         });
 
@@ -80,9 +89,15 @@ public class MainForm extends JFrame {
 
     public void updatePetList() {
         petSelectorComboBox.removeAllItems();  // Clear existing items
-        // TODO: Update petSelectorComboBox with pet names from petManager
-
-        // After adding the pet, set the selected index to the last item (petManager.getPets().size() - 1)
+        for (Pet x : petManager.getList()) {
+            petSelectorComboBox.addItem(x.getName());
+        }
+        int selectedIndex = petManager.getPets().size() - 1;
+    }
+    public Pet getSelectedPet(String name) {
+        for (Pet p : petManager.getList()) {
+            if (p.getName().equals(name)) return p;
+        }
     }
 
     /* ========== DO NOT MODIFY BELOW ========== */
