@@ -1,4 +1,4 @@
-   package VirtualPetLab;
+   package Q4.VirtualPetLab;
 import javax.swing.*;
 import java.awt.*;
 import java.util.Base64;
@@ -38,9 +38,10 @@ public class MainForm extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // TODO: Implement feeding the selected pet
-                Pet p = getSelectedPet(petSelectorComboBox.getSelectedItem());
+                Pet p = getSelectedPet();
                 p.feed();
                 p.updateStatus();
+                waitButtons(1);
             }
         });
 
@@ -49,9 +50,10 @@ public class MainForm extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // TODO: Implement playing with the selected pet
-                Pet p = getSelectedPet(petSelectorComboBox.getSelectedItem());
+                Pet p = getSelectedPet();
                 p.play();
                 p.updateStatus();
+                waitButtons(1);
             }
         });
 
@@ -60,9 +62,10 @@ public class MainForm extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // TODO: Implement putting the selected pet to sleep
-                Pet p = getSelectedPet(petSelectorComboBox.getSelectedItem());
+                Pet p = getSelectedPet();
                 p.sleep();
                 p.updateStatus();
+                waitButtons(1);
             }
         });
 
@@ -75,8 +78,11 @@ public class MainForm extends JFrame {
 
                 // TODO: Implement pet selection change
                 // 1. Grab the current pet from the petManager using petSelectorComboBox.getSelectedIndex()
+                Pet p = getSelectedPet();
                 // 2. Update statusLabel with the selected pet's status
+                updateStatusLabel(p.getStatus());
                 // 3. Update imageLabel with the selected pet's image using setPetImage()
+                setPetImage(p.getImage());
             }
         });
 
@@ -85,6 +91,7 @@ public class MainForm extends JFrame {
 
     public void updateStatusLabel(String status) {
         // TODO: Update statusLabel with the provided status
+        statusLabel.setText(status);
     }
 
     public void updatePetList() {
@@ -92,12 +99,9 @@ public class MainForm extends JFrame {
         for (Pet x : petManager.getList()) {
             petSelectorComboBox.addItem(x.getName());
         }
-        int selectedIndex = petManager.getPets().size() - 1;
+        int selectedIndex = petManager.getList().size() - 1;
     }
-    public Pet getSelectedPet(String name) {
-        for (Pet p : petManager.getList()) {
-            if (p.getName().equals(name)) return p;
-        }
+    public Pet getSelectedPet() { return petManager.getList().get(petSelectorComboBox.getSelectedIndex());
     }
 
     /* ========== DO NOT MODIFY BELOW ========== */
