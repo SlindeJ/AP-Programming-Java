@@ -13,6 +13,9 @@ public class MainForm extends JFrame {
     private JLabel statusLabel;
     private JLabel imageLabel;
     private JComboBox<String> petSelectorComboBox;
+    private JButton adoptADogButton;
+    private JButton adoptACatButton;
+    private JButton adoptAFoxButton;
     // TODO: add adoption buttons
     // Pet list
     private PetManager petManager = new PetManager();
@@ -41,6 +44,7 @@ public class MainForm extends JFrame {
                 Pet p = getSelectedPet();
                 p.feed();
                 p.updateStatus();
+                updateStatusLabel(p.getStatus());
                 waitButtons(1);
             }
         });
@@ -53,6 +57,7 @@ public class MainForm extends JFrame {
                 Pet p = getSelectedPet();
                 p.play();
                 p.updateStatus();
+                updateStatusLabel(p.getStatus());
                 waitButtons(1);
             }
         });
@@ -65,6 +70,7 @@ public class MainForm extends JFrame {
                 Pet p = getSelectedPet();
                 p.sleep();
                 p.updateStatus();
+                updateStatusLabel(p.getStatus());
                 waitButtons(1);
             }
         });
@@ -87,6 +93,52 @@ public class MainForm extends JFrame {
         });
 
         // TODO: Implement adoption button actions
+        adoptADogButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // TODO: Implement feeding the selected pet
+                String name = JOptionPane.showInputDialog("Enter new pet name: ");
+                if (name.trim().isEmpty() || name == null) {
+                    // do nothing
+                }
+                else {
+                    Pet p = new Dog(name);
+                    petManager.addPet(p);
+                }
+                updatePetList();
+            }
+        });
+        adoptACatButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // TODO: Implement feeding the selected pet
+                String name = JOptionPane.showInputDialog("Enter new pet name: ");
+                if (name.trim().isEmpty() || name == null) {
+                    // do nothing
+                }
+                else {
+                    Pet p = new Cat(name);
+                    petManager.addPet(p);
+                }
+                updatePetList();
+            }
+        });
+//        adoptADogButton.addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                // TODO: Implement feeding the selected pet
+//                String name = JOptionPane.showInputDialog("Enter new pet name: ");
+//                if (name.trim().isEmpty() || name == null) {
+//                    // do nothing
+//                }
+//                else {
+//                    Pet p = new Dog(name);
+//                    petManager.addPet(p);
+//                }
+//                updatePetList();
+//            }
+//        });
+
     }
 
     public void updateStatusLabel(String status) {
