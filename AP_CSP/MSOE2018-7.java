@@ -1,6 +1,11 @@
 import java.util.*; 
 
 public class MSOE2018_7 {
+    public static int notMod(int num, int bignum) {
+        int takeout = bignum % num; 
+        int n = bignum - takeout; 
+        return n / num; 
+    }
     public static void main(String[] args) {
         int SecInYear = 31_536_000; 
         int SecInDay = 86_400; 
@@ -10,6 +15,10 @@ public class MSOE2018_7 {
         int year = 1970; 
         int month = 1; 
         int day = 1; 
-        year += 0; // continue here
+        year += notMod(SecInYear, unix);
+        unix = unix % SecInYear; 
+        // account for leap year somewhere around here
+        int days = notMod(SecInDay, unix); 
+        
     }
 }
