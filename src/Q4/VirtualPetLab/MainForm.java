@@ -123,21 +123,21 @@ public class MainForm extends JFrame {
                 updatePetList();
             }
         });
-//        adoptADogButton.addActionListener(new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//                // TODO: Implement feeding the selected pet
-//                String name = JOptionPane.showInputDialog("Enter new pet name: ");
-//                if (name.trim().isEmpty() || name == null) {
-//                    // do nothing
-//                }
-//                else {
-//                    Pet p = new Dog(name);
-//                    petManager.addPet(p);
-//                }
-//                updatePetList();
-//            }
-//        });
+        adoptAFoxButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // TODO: Implement feeding the selected pet
+                String name = JOptionPane.showInputDialog("Enter new pet name: ");
+                if (name.trim().isEmpty() || name == null) {
+                    // do nothing
+                }
+                else {
+                    Pet p = new Fox(name);
+                    petManager.addPet(p);
+                }
+                updatePetList();
+            }
+        });
 
     }
 
