@@ -5,6 +5,7 @@ public class MSOE2015_4 {
         Scanner input = new Scanner(System.in); 
         System.out.print("Enter plain or cipher text: "); 
         String cipherText = input.next().toUpperCase(); 
+        cipherText = cipherText + input.nextLine().toUpperCase(); 
         System.out.print("Enter key: "); 
         String key = Integer.toBinaryString(input.nextInt()); 
         while (key.length() < 30) {     // key to size 30
@@ -13,7 +14,8 @@ public class MSOE2015_4 {
         while (cipherText.length() % 5 != 0) {
             cipherText += " "; 
         }
-        ArrayList<String> binaryList = new ArrayList<>();   // string list of every char binary code
+        // string list of every char binary code
+        ArrayList<String> binaryList = new ArrayList<>(); 
         for (char x : cipherText.toCharArray()) {
             String n = Integer.toBinaryString(((int)x-32)); 
             if (n.equals("0")) {
@@ -21,21 +23,13 @@ public class MSOE2015_4 {
             }
             binaryList.add(n); 
         }
-        // looks good here, need to make a list of the 5 combined binary codes
-        // IMPORTANT: notice that the key shifts left 1 for every binary grouping after the first
-        for (String s : binaryList) {
-            System.out.println(s); 
-        }
+        // combined
         ArrayList<String> binaryListCombined = new ArrayList<>();
-        for (int s = 0; s < binaryList.size()/5; s += 5) {
+        for (int s = 0; s < binaryList.size(); s += 5) {
             String comb = binaryList.get(s) + binaryList.get(s+1) + binaryList.get(s+2) + binaryList.get(s+3) + binaryList.get(s+4); 
             binaryListCombined.add(comb); 
         }
-        for (String c : binaryListCombined) {
-            System.out.println(c); 
-        }
-        System.out.println(key); 
-        // XOR the binary grouping with the key down here
+        // XORed
         ArrayList<String> XORList = new ArrayList<>();
         for (int lcv = 0; lcv < binaryListCombined.size(); lcv++) {
             String XOR = ""; 
@@ -49,6 +43,24 @@ public class MSOE2015_4 {
             key = key.substring(1) + key.substring(0, 1); 
             XORList.add(XOR); 
         }
-        System.out.println(XORList.get(0)); 
+        // split XORed strings
+        ArrayList<String> split = new ArrayList<>(); 
+        for (int e = 0; e < XORList.size(); e += 1) {
+            String part = XORList.get(e).substring(0, 6); 
+            split.add(part); 
+            part = XORList.get(e).substring(6, 12); 
+            split.add(part); 
+            part = XORList.get(e).substring(12, 18); 
+            split.add(part); 
+            part = XORList.get(e).substring(18, 24); 
+            split.add(part); 
+            part = XORList.get(e).substring(24); 
+            split.add(part); 
+        }
+        // reduced and ascii
+        // ArrayList<int> ascii = new ArrayList<>();    // (char)number
+        // int foo = Integer.parseInt("1001", 2);
+
+        // cipher text
     }
 }
