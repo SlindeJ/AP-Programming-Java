@@ -60,7 +60,7 @@ public class MSOE2015_4 {
         // reduced and ascii
         // ArrayList<int> ascii = new ArrayList<>();    // (char)number
         // int foo = Integer.parseInt("1001", 2);
-
+        System.out.println(Integer.parseInt(split.get(0), 2)); 
         // cipher text
     }
 }
