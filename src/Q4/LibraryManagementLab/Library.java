@@ -29,17 +29,43 @@ public class Library implements LibrarySystem {
             }
         }
     }
-    // Other methods...
-//    void addPatron(Patron patron);
-//    void removePatron(String patronId);
-//    void createTransaction(String isbn, String patronId, String checkoutDate);
-//    void updateTransaction(String isbn, String patronId, String returnDate);
-//    void viewMostRecentTransaction(String isbn);  // is made down below
-//    boolean checkoutBook(String isbn, String patronId);
-//    boolean checkinBook(String isbn, String patronId);
-//    Book findClosestBook(String title);
-//    Book searchBookByTitle(String title);
-//    Book searchBookByAuthor(String author);
+//     Other methods...
+    public void addPatron(Patron patron) { patrons.add(patron); }
+    public void removePatron(String patronId) {
+        for (Patron p : patrons) {
+            if (p.getPatronId().equals(patronId)) {
+                patrons.remove(p);
+            }
+        }
+    }
+    public void createTransaction(String isbn, String patronId, String checkoutDate) {
+        Transaction t = new Transaction(isbn, patronId, checkoutDate);
+        transactions.add(t);
+    }
+    public void updateTransaction(String isbn, String patronId, String returnDate) {
+        for (Transaction t : transactions) {
+            if (t.getIsbn().equals(isbn) && t.getPatronId().equals(patronId)) {
+                t.setReturnDate(returnDate);
+            }
+        }
+    }
+    public boolean checkoutBook(String isbn, String patronId) {
+
+        return false;
+    }
+    public boolean checkinBook(String isbn, String patronId) {
+
+        return false;
+    }
+    public Book findClosestBook(String title) {
+
+    }
+    public Book searchBookByTitle(String title) {
+
+    }
+    public Book searchBookByAuthor(String author) {
+
+    }
     @Override
     public void viewMostRecentTransaction(String isbn) {
         // Hint: Use a backward loop to find the most recent transaction
