@@ -1,6 +1,6 @@
 import java.util.*; 
 
-public class MSOE2015_4 {
+public class MSOE2018_9 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in); 
         System.out.print("Enter plain or cipher text: "); 
@@ -58,9 +58,20 @@ public class MSOE2015_4 {
             split.add(part); 
         }
         // reduced and ascii
-        // ArrayList<int> ascii = new ArrayList<>();    // (char)number
+        ArrayList<Integer> ascii = new ArrayList<>();    // (char)number
         // int foo = Integer.parseInt("1001", 2);
-        System.out.println(Integer.parseInt(split.get(0), 2)); 
+        for (String k : split) {
+            ascii.add(Integer.parseInt(k, 2) + 32); 
+        }
         // cipher text
+        ArrayList<String> ciphered = new ArrayList<>(); 
+        for (int b : ascii) {
+            ciphered.add( new Character((char)b).toString());   // fix here
+        }
+        System.out.println(); 
+        for (String h : ciphered) {
+            System.out.print(h); 
+        }
+        System.out.println(); 
     }
 }
