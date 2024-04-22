@@ -61,7 +61,12 @@ public class Library implements LibrarySystem {
 
     }
     public Book searchBookByTitle(String title) {
-
+        for (Book b : books) {
+            if (b.getTitle().equals(title)) {
+                return b;
+            }
+        }
+        // if no find book maybe findClosestBook??
     }
     public Book searchBookByAuthor(String author) {
 
