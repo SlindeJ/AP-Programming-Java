@@ -18,11 +18,12 @@ public class MSOE2018_9 {
         ArrayList<String> binaryList = new ArrayList<>(); 
         for (char x : cipherText.toCharArray()) {
             String n = Integer.toBinaryString(((int)x-32)); 
-            if (n.equals("0")) {
-                n = "000000"; 
+            while (n.length() < 6) {
+                n = "0" + n; 
             }
             binaryList.add(n); 
         }
+
         // combined
         ArrayList<String> binaryListCombined = new ArrayList<>();
         for (int s = 0; s < binaryList.size(); s += 5) {
@@ -75,3 +76,18 @@ public class MSOE2018_9 {
         System.out.println(); 
     }
 }
+/*
+Note: MSOE2018_9.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Enter plain or cipher text: welcome to msoe
+Enter key: 8675309
+
+W$I<"LG++U"ID11
+@SlindeJ ➜ /workspaces/AP-Programming-Java/AP_CSP (master) $ java MSOE2018_9.java
+Note: MSOE2018_9.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Enter plain or cipher text: W$I<"LG++U"ID11
+Enter key: 8675309
+
+WELCOME TO MSOE
+*/
