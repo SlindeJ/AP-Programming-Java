@@ -4,6 +4,7 @@ import java.time.Instant;
 import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class Library implements LibrarySystem {
     private ArrayList<Book> books;
@@ -50,26 +51,36 @@ public class Library implements LibrarySystem {
         }
     }
     public boolean checkoutBook(String isbn, String patronId) {
-
-        return false;
+        if () { // if book not exist
+            return false;
+        } else {
+            for (Book b : books) {
+                if (!b.isAvailable()) { return false; }     // continue working here
+                if (b.getIsbn().equals(isbn)) {
+                    Transaction nou = new Transaction(isbn, patronId, getDateToday());
+                    transactions.add(nou);
+                    b.setCheckedOut(true);
+                    return true;
+                }
+            }
+        }
     }
     public boolean checkinBook(String isbn, String patronId) {
+        for (Transaction t : transactions) {
+            if (t.getIsbn().equals(isbn) && t.getPatronId().equals(patronId)) {
+                t.setReturnDate(getDateToday());
 
+            }
+        }
         return false;
     }
-    public Book findClosestBook(String title) {
-
-    }
-    public Book searchBookByTitle(String title) {
+    public Book searchBookByAuthor(String author) {
         for (Book b : books) {
-            if (b.getTitle().equals(title)) {
+            if (b.getAuthor().equals(author)) {
                 return b;
             }
         }
-        // if no find book maybe findClosestBook??
-    }
-    public Book searchBookByAuthor(String author) {
-
+        return null;
     }
     @Override
     public void viewMostRecentTransaction(String isbn) {
@@ -84,11 +95,24 @@ public class Library implements LibrarySystem {
     @Override
     public Book findClosestBook(String title) {
         // TODO: Search for the closest book title using .toLowerCase() and .contains(); return the closest book or null
+        for (Book b : books) {
+            if (b.getTitle().toLowerCase().contains(title.toLowerCase()) || title.toLowerCase().contains(b.getTitle().toLowerCase())) {
+                return b;
+            }
+        }
+        return null;
     }
 
     @Override
     public Book searchBookByTitle(String title) {
         // TODO: Binary search for book; if not found, return the closest book
+        for (Book b : books) {
+            if (b.getTitle().equals(title)) {
+                return b;
+            }
+        }
+        // if no find book maybe findClosestBook??
+        return findClosestBook(title);
     }
 
     // You might want to add some helper methods here like getBookByIsbn, getPatronById, etc.
