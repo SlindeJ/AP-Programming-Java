@@ -18,7 +18,7 @@ public class Transaction {
     public String getIsbn() { return isbn; }
     public String getCheckoutDate() { return checkoutDate; }
     public String getReturnDate() { return returnDate; }
-
+    public void setReturnDate(String rDate) { returnDate = rDate; }
     // continue here
 
 
