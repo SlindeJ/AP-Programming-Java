@@ -51,25 +51,23 @@ public class Library implements LibrarySystem {
         }
     }
     public boolean checkoutBook(String isbn, String patronId) {
-        if () { // if book not exist
-            return false;
-        } else {
-            for (Book b : books) {
-                if (!b.isAvailable()) { return false; }     // continue working here
-                if (b.getIsbn().equals(isbn)) {
-                    Transaction nou = new Transaction(isbn, patronId, getDateToday());
-                    transactions.add(nou);
-                    b.setCheckedOut(true);
-                    return true;
+        for (Book b : books) {
+            if (b.getIsbn().equals(isbn)) {
+                if (!b.isAvailable()) {
+                    return false;
                 }
+                Transaction nou = new Transaction(isbn, patronId, getDateToday());
+                transactions.add(nou);
+                b.setCheckedOut(true);
+                return true;
             }
         }
+        return false;
     }
     public boolean checkinBook(String isbn, String patronId) {
         for (Transaction t : transactions) {
             if (t.getIsbn().equals(isbn) && t.getPatronId().equals(patronId)) {
                 t.setReturnDate(getDateToday());
-
             }
         }
         return false;
@@ -86,6 +84,12 @@ public class Library implements LibrarySystem {
     public void viewMostRecentTransaction(String isbn) {
         // Hint: Use a backward loop to find the most recent transaction
         // If no transaction is found, print "No transactions found for ISBN: <isbn>"
+        for (int i = transactions.size()-1; i > 0; i--) {
+            if (transactions.get(i).getIsbn().equals(isbn)) {
+                System.out.println(transactions.get(i).toString());
+            }
+        }
+        System.out.println("No transactions found for ISBN: <isbn>");
     }
 
     // TODO: Complete the implementation of LibrarySystem methods
@@ -111,7 +115,6 @@ public class Library implements LibrarySystem {
                 return b;
             }
         }
-        // if no find book maybe findClosestBook??
         return findClosestBook(title);
     }
 
