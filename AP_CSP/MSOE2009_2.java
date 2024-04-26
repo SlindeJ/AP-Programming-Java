@@ -16,6 +16,7 @@ public class MSOE2018_9 {
 
         double dist = r * Math.acos(Math.cos(a0)*Math.cos(o0)*Math.cos(a1)*Math.cos(o1)+Math.cos(a0)*Math.cos(a1)*Math.sin(o0)*Math.sin(o1)+Math.sin(a0)*Math.sin(a1)); 
         System.out.println(dist); 
+        
     }
 }
 
