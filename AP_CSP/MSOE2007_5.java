@@ -21,16 +21,29 @@ public class MSOE2018_9 {
             }
         }
         maxReps++; 
-        System.out.println(maxReps + " " + curStr);
-        for (int lcv = 0; lcv < arr.length - (maxReps); lcv++) {    // trying to get the letters to show here
-            String sub = str.substring(lcv, maxReps); 
-            boolean notSame = false;
+        System.out.print(maxReps + " ");
+        boolean notSame = false;
+        String sub = ""; 
+        for (int lcv = 0; lcv < arr.length - (maxReps-1); lcv++) {    // trying to get the letters to show here
+            sub = str.substring(lcv, maxReps+lcv); 
+            notSame = false;
             for (int lcv2 = 0; lcv2 < sub.length()-1; lcv2++) {
                 if (!sub.substring(lcv2, lcv2+1).equals(sub.substring(lcv2+1, lcv2+2))) {
                     notSame = true; 
                 }
             }
+            if (!notSame) {
+                lcv += maxReps-1; 
+                System.out.print(sub.substring(0, 1) + " "); 
+            }
         }
         System.out.println(); 
     }
 }
+/*
+Please enter the string: lllmmmnnnoooppp
+3 l m n o p 
+@SlindeJ ➜ /workspaces/AP-Programming-Java/AP_CSP (master) $ java MSOE2007_5.java
+Please enter the string: lkjsl;kjlkvjlkjlsjjjjdjakekkkejlvjalkkkdjxnndneijkjvkajkjkekkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+35 k 
+*/
