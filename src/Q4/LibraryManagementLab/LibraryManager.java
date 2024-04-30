@@ -33,4 +33,63 @@ public class LibraryManager {
 
     // TODO: Implement main program; make a new Library object, load the catalog,
     // add each book from the catalog to the library, then display the menu
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        ArrayList<Patron> p = new ArrayList<>();
+        ArrayList<Transaction> t = new ArrayList<>();
+        Library library = new Library(loadCatalog(), p, t);
+
+        System.out.println("Menu: ");
+        System.out.println("1. Add Patron\n" +
+                "2. Add Book\n" +
+                "3. Remove Book\n" +
+                "4. Checkout Book\n" +
+                "5. Return Book\n" +
+                "6. Search Book\n" +
+                "7. Search Book Transaction\n" +
+                "8. Exit");
+        System.out.print("Enter choice: ");
+        int choice = input.nextInt();
+        if (choice == 1) {
+            System.out.print("Enter Name: ");
+            String name = input.next();
+            System.out.print("Enter Patron ID: ");
+            String patronID = input.next();
+            // add patron
+        } else if (choice == 2) {
+            System.out.print("Enter ISBN: ");
+            String ISBN = input.next();
+            System.out.print("Enter Title: ");
+            String title = input.next();
+            System.out.print("Enter Author: ");
+            String author = input.next();
+            // add book
+        } else if (choice == 3) {
+            System.out.print("Enter ISBN: ");
+            String ISBN = input.next();
+            // remove book
+        } else if (choice == 4) {
+            System.out.print("Enter ISBN: ");
+            String ISBN = input.next();
+            System.out.print("Enter Patron ID: ");
+            String patronID = input.next();
+            // checkout book
+        } else if (choice == 5) {
+            System.out.print("Enter ISBN: ");
+            String ISBN = input.next();
+            System.out.print("Enter Patron ID: ");
+            String patronID = input.next();
+            // return book
+        } else if (choice == 6) {
+            System.out.print("Enter Title: ");
+            String title = input.next();
+            // print stuff for book found
+        } else if (choice == 7) {
+            System.out.print("Enter ISBN: ");
+            String ISBN = input.next();
+            // print stuff from transaction
+        } else {    // exit
+            System.out.println("Exiting...");
+        }
+    }
 }
