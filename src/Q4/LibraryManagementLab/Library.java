@@ -4,6 +4,7 @@ import java.time.Instant;
 import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Locale;
 
 public class Library implements LibrarySystem {
@@ -116,7 +117,7 @@ public class Library implements LibrarySystem {
     @Override
     public Book searchBookByTitle(String title) {
         // TODO: Binary search for book; if not found, return the closest book
-        Book b = binarySearch(books, title); 
+        Book b = binarySearch(books, title);
         if (b != null) { return b; }
         return findClosestBook(title);
     }
