@@ -55,8 +55,8 @@ public class LibraryManager {
             String name = input.next();
             System.out.print("Enter Patron ID: ");
             String patronID = input.next();
-            Patron p = new Patron(name, patronID); 
-            library.addPatron(p); 
+            Patron p2 = new Patron(name, patronID); 
+            library.addPatron(p2); 
             System.out.println("Successfully added patron");
         } else if (choice == 2) {
             System.out.print("Enter ISBN: ");
