@@ -55,7 +55,9 @@ public class LibraryManager {
             String name = input.next();
             System.out.print("Enter Patron ID: ");
             String patronID = input.next();
-            // add patron
+            Patron p = new Patron(name, patronID); 
+            library.addPatron(p); 
+            System.out.println("Successfully added patron");
         } else if (choice == 2) {
             System.out.print("Enter ISBN: ");
             String ISBN = input.next();
@@ -63,31 +65,34 @@ public class LibraryManager {
             String title = input.next();
             System.out.print("Enter Author: ");
             String author = input.next();
-            // add book
+            Book b = new Book(title, ISBN, author); 
+            library.addBook(b); 
         } else if (choice == 3) {
             System.out.print("Enter ISBN: ");
             String ISBN = input.next();
-            // remove book
+            library.removeBook(ISBN); 
         } else if (choice == 4) {
             System.out.print("Enter ISBN: ");
             String ISBN = input.next();
             System.out.print("Enter Patron ID: ");
             String patronID = input.next();
-            // checkout book
+            library.checkoutBook(ISBN, patronID); // returns boolean, may cause problem
         } else if (choice == 5) {
             System.out.print("Enter ISBN: ");
             String ISBN = input.next();
             System.out.print("Enter Patron ID: ");
             String patronID = input.next();
-            // return book
+            library.checkInBook(ISBN, patronID); // also returns boolean value, might need to finish
         } else if (choice == 6) {
             System.out.print("Enter Title: ");
             String title = input.next();
             // print stuff for book found
+            System.out.println(library.searchBookByTitle(title)); // prints book object
         } else if (choice == 7) {
             System.out.print("Enter ISBN: ");
             String ISBN = input.next();
             // print stuff from transaction
+            library.viewMostRecentTransaction(ISBN); 
         } else {    // exit
             System.out.println("Exiting...");
         }

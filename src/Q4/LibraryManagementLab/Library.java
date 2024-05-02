@@ -20,7 +20,13 @@ public class Library implements LibrarySystem {
     // Implement interface methods
     @Override
     public void addBook(Book book) { /* Implementation; remember to add in sorted order */
-        // it sorts by title
+        for (int i = 0; i < books.size(); i++) {
+            if (books.get(i).getTitle().compareTo(book.getTitle()) > 0) {
+                books.add(i, book); 
+                break;
+            }
+        }
+        if (books.size() == 0) { books.add(book); }
     }
     @Override
     public void removeBook(String isbn) { /* Implementation */
@@ -110,11 +116,8 @@ public class Library implements LibrarySystem {
     @Override
     public Book searchBookByTitle(String title) {
         // TODO: Binary search for book; if not found, return the closest book
-        for (Book b : books) {
-            if (b.getTitle().equals(title)) {
-                return b;
-            }
-        }
+        Book b = binarySearch(books, title); 
+        if (b != null) { return b; }
         return findClosestBook(title);
     }
 
