@@ -5,6 +5,7 @@ import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Locale;
+import Q4.LibraryManagementLab.BinarySearchUtil;
 
 public class Library implements LibrarySystem {
     private ArrayList<Book> books;
@@ -12,10 +13,10 @@ public class Library implements LibrarySystem {
     private ArrayList<Transaction> transactions;
 
     // TODO: Implement the constructor
-    public Library(ArrayList<Book> b, ArrayList<Patron> p, ArrayList<Transaction> t) {
+    public Library(ArrayList<Book> b) {
         books = b;
-        patrons = p;
-        transactions = t;
+        patrons = new ArrayList<Patron>();
+        transactions = new ArrayList<Transaction>();
     }
     // Implement interface methods
     @Override
@@ -116,7 +117,7 @@ public class Library implements LibrarySystem {
     @Override
     public Book searchBookByTitle(String title) {
         // TODO: Binary search for book; if not found, return the closest book
-        Book b = binarySearch(books, title); 
+        Book b = BinarySearchUtil.binarySearch(books, title); 
         if (b != null) { return b; }
         return findClosestBook(title);
     }

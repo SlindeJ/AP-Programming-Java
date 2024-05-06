@@ -35,10 +35,7 @@ public class LibraryManager {
     // add each book from the catalog to the library, then display the menu
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        ArrayList<Patron> p = new ArrayList<>();
-        ArrayList<Transaction> t = new ArrayList<>();
-        Library library = new Library(loadCatalog(), p, t);
-
+        Library library = new Library(loadCatalog());
         System.out.println("Menu: ");
         System.out.println("1. Add Patron\n" +
                 "2. Add Book\n" +
@@ -76,13 +73,23 @@ public class LibraryManager {
             String ISBN = input.next();
             System.out.print("Enter Patron ID: ");
             String patronID = input.next();
-            library.checkoutBook(ISBN, patronID); // returns boolean, may cause problem
+            if (library.checkoutBook(ISBN, patronID) == true) { // returns boolean, may cause problem
+                System.out.println("Book checked out successfully");
+            }
+            else {
+                System.out.println("Error checking out book");
+            }
         } else if (choice == 5) {
             System.out.print("Enter ISBN: ");
             String ISBN = input.next();
             System.out.print("Enter Patron ID: ");
             String patronID = input.next();
-            library.checkinBook(ISBN, patronID); // also returns boolean value, might need to finish
+            if (library.checkinBook(ISBN, patronID) == true) { // also returns boolean value, might need to finish
+                System.out.println("Book checked in successfully"); 
+            }
+            else {
+                System.out.println("Error checking in book");
+            }
         } else if (choice == 6) {
             System.out.print("Enter Title: ");
             String title = input.next();
