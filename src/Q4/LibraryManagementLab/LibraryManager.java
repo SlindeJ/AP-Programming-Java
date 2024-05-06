@@ -82,7 +82,7 @@ public class LibraryManager {
             String ISBN = input.next();
             System.out.print("Enter Patron ID: ");
             String patronID = input.next();
-            library.checkInBook(ISBN, patronID); // also returns boolean value, might need to finish
+            library.checkinBook(ISBN, patronID); // also returns boolean value, might need to finish
         } else if (choice == 6) {
             System.out.print("Enter Title: ");
             String title = input.next();
