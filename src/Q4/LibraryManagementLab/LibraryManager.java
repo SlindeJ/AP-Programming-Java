@@ -11,7 +11,7 @@ public class LibraryManager {
         try {
             // Dataset source: https://www.kaggle.com/datasets/saurabhbagchi/books-dataset
             System.out.print("Loading catalog...");
-            String path = "LibraryManagementLab/book_catalog.csv";  // Change directory as needed
+            String path = "/workspaces/AP-Programming-Java/src/Q4/LibraryManagementLab/book_catalog.csv";  // Change directory as needed
             Scanner file = new Scanner(new File(path));
             ArrayList<Book> books = new ArrayList<>();
             while (file.hasNextLine()) {
@@ -105,3 +105,124 @@ public class LibraryManager {
         }
     }
 }
+/*
+Loading catalog...success.
+Menu: 
+1. Add Patron
+2. Add Book
+3. Remove Book
+4. Checkout Book
+5. Return Book
+6. Search Book
+7. Search Book Transaction
+8. Exit
+Enter choice: 1
+Enter Name: myName
+Enter Patron ID: 12345
+Successfully added patron
+@SlindeJ ➜ /workspaces/AP-Programming-Java (master) $ ^C
+
+ cd /workspaces/AP-Programming-Java ; /usr/bin/env /opt/java/11.0.14/bin/java -cp /home/codespace/.vscode-remote/data/User/workspaceStorage/-19c68325/redhat.java/jdt_ws/AP-Programming-Java_9c09df92/bi@SlindeJ ➜ /workspaces/AP-Programming-Java (master) $  cd /workspaces/AP-Programming-Java ; /usr/bin/env /opt/java/11.0.14/bin/java -cp /home/codespace/.vscode-remote/data/User/workspaceStorage/-19c68325/redhat.java/jdt_ws/AP-Programming-Java_9c09df92/bin Q4.LibraryManagementLab.LibraryManager 
+Loading catalog...success.
+Menu: 
+1. Add Patron
+2. Add Book
+3. Remove Book
+4. Checkout Book
+5. Return Book
+6. Search Book
+7. Search Book Transaction
+8. Exit
+Enter choice: 2
+Enter ISBN: 12345
+Enter Title: myTitle
+Enter Author: byMe
+@SlindeJ ➜ /workspaces/AP-Programming-Java (master) $ java LibraryManager.java
+Error: Could not find or load main class LibraryManager.java
+Caused by: java.lang.ClassNotFoundException: LibraryManager.java
+@SlindeJ ➜ /workspaces/AP-Programming-Java (master) $ ^C
+
+ /opt/java/11.0.14/bin/java -cp /home/codespace/.vscode-remote/data/User/workspaceStorage/-19c68325/redhat.java/jdt_ws/AP-Programming-Java_9c09df92/bi@SlindeJ ➜ /workspaces/AP-Programming-Java (master) $  cd /workspaces/AP-Programming-Java ; /usr/bin/env /opt/java/11.0.14/bin/java -cp /home/codespace/.vscode-remote/data/User/workspaceStorage/-19c68325/redhat.java/jdt_ws/AP-Programming-Java_9c09df92/bin Q4.LibraryManagementLab.LibraryManager 
+Loading catalog...success.
+Menu: 
+1. Add Patron
+2. Add Book
+3. Remove Book
+4. Checkout Book
+5. Return Book
+6. Search Book
+7. Search Book Transaction
+8. Exit
+Enter choice: 3
+Enter ISBN: 0195153448
+Exception in thread "main" java.util.ConcurrentModificationException
+        at java.base/java.util.ArrayList$Itr.checkForComodification(ArrayList.java:1043)
+        at java.base/java.util.ArrayList$Itr.next(ArrayList.java:997)
+        at Q4.LibraryManagementLab.Library.removeBook(Library.java:34)
+        at Q4.LibraryManagementLab.LibraryManager.main(LibraryManager.java:70)
+@SlindeJ ➜ /workspaces/AP-Programming-Java (master) $ ^C
+
+ /usr/bin/env /opt/java/11.0.14/bin/java -cp /home/codespace/.vscode-remote/data/User/workspaceStorage/-19c68325/redhat.java/jdt_ws/AP-Programming-Java_9c09df92/bin Q4.LibraryManagementLab.LibraryMana@SlindeJ ➜ /workspaces/AP-Programming-Java (master) $  /usr/bin/env /opt/java/11.0.14/bin/java -cp /home/codespace/.vscode-remote/data/User/workspaceStorage/-19c68325/redhat.java/jdt_ws/AP-Programming-Java_9c09df92/bin Q4.LibraryManagementLab.LibraryManager 
+Loading catalog...success.
+Menu: 
+1. Add Patron
+2. Add Book
+3. Remove Book
+4. Checkout Book
+5. Return Book
+6. Search Book
+7. Search Book Transaction
+8. Exit
+Enter choice: 4
+Enter ISBN: 0195153448
+Enter Patron ID: 12345
+Book checked out successfully
+@SlindeJ ➜ /workspaces/AP-Programming-Java (master) $ ^C
+
+ /usr/bin/env /opt/java/11.0.14/bin/java -cp /home/codespace/.vscode-remote/data/User/workspaceStorage/-19c68325/redhat.java/jdt_ws/AP-Programming-Java_9c09df92/bin Q4.LibraryManagementLab.LibraryMana@SlindeJ ➜ /workspaces/AP-Programming-Java (master) $  /usr/bin/env /opt/java/11.0.14/bin/java -cp /home/codespace/.vscode-remote/data/User/workspaceStorage/-19c68325/redhat.java/jdt_ws/AP-Programming-Java_9c09df92/bin Q4.LibraryManagementLab.LibraryManager 
+Loading catalog...success.
+Menu: 
+1. Add Patron
+2. Add Book
+3. Remove Book
+4. Checkout Book
+5. Return Book
+6. Search Book
+7. Search Book Transaction
+8. Exit
+Enter choice: 5
+Enter ISBN: 0195153448
+Enter Patron ID: 12345
+Error checking in book
+@SlindeJ ➜ /workspaces/AP-Programming-Java (master) $ ^C /usr/bin/env /opt/java/11.0.14/bin/java -cp /home
+
+/codespace/.vscode-remote/data/User/workspaceStorage/-19c68325/redhat.java/jdt_ws/AP-Programming-Java_9c09df92/bin Q4.LibraryManagementLab.LibraryMana@SlindeJ ➜ /workspaces/AP-Programming-Java (master) $  /usr/bin/env /opt/java/11.0.14/bin/java -cp /home/codespace/.vscode-remote/data/User/workspaceStorage/-19c68325/redhat.java/jdt_ws/AP-Programming-Java_9c09df92/bin Q4.LibraryManagementLab.LibraryManager 
+Loading catalog...success.
+Menu: 
+1. Add Patron
+2. Add Book
+3. Remove Book
+4. Checkout Book
+5. Return Book
+6. Search Book
+7. Search Book Transaction
+8. Exit
+Enter choice: 6
+Enter Title: Classical Mythology
+Book{title='Classical Mythology', isbn='0195153448', author='Mark P. O. Morford'}
+/codespace/.vscode-remote/data/User/workspaceStorage/-19c68325/redhat.java/jdt_ws/AP-Programming-Java_9c09df92/bin Q4.LibraryManagementLab.LibraryManager 
+@SlindeJ ➜ /workspaces/AP-Programming-Java (master) $  /usr/bin/env /opt/java/11.0.14/bin/java -cp /home/codespace/.vscode-remote/data/User/workspaceStorage/-19c68325/redhat.java/jdt_ws/AP-Programming-Java_9c09df92/bin Q4.LibraryManagementLab.LibraryManager 
+Loading catalog...success.
+Menu: 
+1. Add Patron
+2. Add Book
+3. Remove Book
+4. Checkout Book
+5. Return Book
+6. Search Book
+7. Search Book Transaction
+8. Exit
+Enter choice: 7
+Enter ISBN: 0195153448
+No transactions found for ISBN: <isbn>
+*/
