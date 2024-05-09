@@ -18,6 +18,6 @@ public class BinarySearchUtil {
             r = m - 1;
         } 
     }
-    return -1;
+    return null;
     } 
 }
