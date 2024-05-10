@@ -10,6 +10,8 @@ package SocketLab.Server;
 	Revised by:
 
  */
+import SocketLab.CaeserCipher;
+
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.File;
@@ -24,6 +26,7 @@ import java.util.ArrayList;
 public class LoginServer {
     public static void main(String[] args) throws Exception{
         final int PORT = 33235; //port number for this server application
+        final int ENC_OFFSET = 2;
         //setup welcome socket
         ServerSocket welcomeSocket = new ServerSocket(PORT);
         System.out.println("Now listening at " + welcomeSocket.getLocalSocketAddress());
@@ -48,6 +51,11 @@ public class LoginServer {
                 //parse protocol message
                 username = parsedProtocolMessage[1];
                 String password = parsedProtocolMessage[2];
+
+                // decrypting name/passw
+                username = CaeserCipher.decrypt(username, ENC_OFFSET);
+                password = CaeserCipher.decrypt(password, ENC_OFFSET);
+
                 System.out.println("User Name: " + username + ", password: " + password);
 
                 //check to see if username/password matches

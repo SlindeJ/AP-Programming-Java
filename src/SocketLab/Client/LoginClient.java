@@ -10,6 +10,8 @@ package SocketLab.Client;
 	Revised by:
 
  */
+import SocketLab.CaeserCipher;
+
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.InputStreamReader;
@@ -20,6 +22,7 @@ public class LoginClient {
     public static void main(String[] args) throws Exception{
         String SERVER = "localhost"; //or IP address // "127.0.0.1";
         final int PORT = 13254; //Use the port number of the server
+        final int ENC_OFFSET = 2;
 
         Scanner myScanner = new Scanner(System.in);
         //System.out.println(" Input the IP address of the server:");
@@ -41,6 +44,10 @@ public class LoginClient {
         String username = myScanner.next();
         System.out.print("Enter Password:\t");
         String password = myScanner.next();
+
+        // encrypting
+        username = CaeserCipher.encrypt(username, ENC_OFFSET);
+        password = CaeserCipher.encrypt(password, ENC_OFFSET);
 
         //Send login request to the authentication server
         //TODO 1: Construct login message as the action word + username + password,
