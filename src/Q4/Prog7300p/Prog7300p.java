@@ -6,10 +6,10 @@ public class Prog7300p {
     public static void main(String[] args) {
         // AND NEURON
         double[][] x_train = {
-            {0, 0},
-            {0, 1},
-            {1, 0},
-            {1, 1}
+                {0, 0},
+                {0, 1},
+                {1, 0},
+                {1, 1}
         };
         double[] y_train = {0, 0, 0, 1};
         // fitting the model
@@ -33,7 +33,6 @@ public class Prog7300p {
                 {0}, {1}
         };
         y_train = new double[]{1, 0};
-
-
     }
 }
+
