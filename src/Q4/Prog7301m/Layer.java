@@ -1,4 +1,5 @@
 package Q4.Prog7301m;
+import java.util.*;
 
 public class Layer {
     class Neuron {
@@ -17,14 +18,14 @@ public class Layer {
             }
         }
 
-        public Neuron[] Neurons;
+        public Layer.Neuron[] Neurons;
         public int Size;
 
         public Layer(int neurons, int prevLayerSize) {
             Size = neurons; // just amnt of neurons it has
-            Neurons =  new Neuron[Size];
+            Neurons =  new Layer.Neuron[Size];
             for (int i = 0; i < Size; i++) {
-                Neurons[i] = new Neuron(prevLayerSize);
+                Neurons[i] = new Layer.Neuron(prevLayerSize);
             }
         }
     }
