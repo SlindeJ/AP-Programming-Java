@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 //package Q4.LibraryManagementLab;
 //
 //import java.io.File;
@@ -99,7 +98,6 @@
 //        }
 //    }
 //}
-=======
 package Q4.LibraryManagementLab;
 
 import java.io.File;
@@ -207,7 +205,6 @@ public class LibraryManager {
         } 
     }
 }
->>>>>>> a079910 (update)
 /*
 Loading catalog...success.
 Menu: 
