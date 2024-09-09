@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <excludeFromCompile>
+      <directory url="file://$PROJECT_DIR$" includeSubdirectories="false" />
+      <directory url="file://$PROJECT_DIR$/src/Q1" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/src/Q2" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/src/Q3" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/src/Q4" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/src/SocketLab" includeSubdirectories="true" />
+    </excludeFromCompile>
+  </component>
+</project>
