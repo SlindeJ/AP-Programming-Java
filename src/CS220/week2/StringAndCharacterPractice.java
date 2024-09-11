@@ -1,4 +1,4 @@
-//import java.util.Arrays;
+package CS220.week2;//import java.util.Arrays;
 //https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html
 //https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Character.html
 

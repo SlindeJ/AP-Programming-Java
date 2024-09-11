@@ -1,3 +1,5 @@
+package CS220.week2;
+
 public class Colorfont {
 	// ANSI escape code constants for text colors
 	final static String RESET = "\u001B[0m";

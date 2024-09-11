@@ -1,4 +1,4 @@
-/*
+package CS220.week2;/*
  * This example illustrates variable scope, variable type,
  * console input/output, basic input validation,
  * and use String variable

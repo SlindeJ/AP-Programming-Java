@@ -1,5 +1,5 @@
 //Note-3: a java file can contain one and only one public class, all other classes in the same file can not be public.
-package CS220.test;
+package CS220.week2;
 
 
 

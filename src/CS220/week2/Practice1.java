@@ -1,3 +1,4 @@
+package CS220.week2;
 
 import test.Test; //Test class is public accessible
 //import test.Test2; //Test2 class is package accessible, outside the package test, Test2 cannot be accessed

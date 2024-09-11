@@ -1,3 +1,5 @@
+package CS220.week2;
+
 import java.util.Scanner;
 
 //Note-1: main method must be defined in a class
