@@ -1,4 +1,4 @@
-/**************************************
+package CS220.week3; /**************************************
 //http://javaprojectspaul.blogspot.com/2013/03/ticketnumber.html
   Filename: TicketNumber.java
   Created by: Paul Steidle

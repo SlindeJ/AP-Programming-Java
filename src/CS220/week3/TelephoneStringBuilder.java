@@ -1,4 +1,6 @@
-/** 
+package CS220.week3;
+
+/**
  * The telephone class provides static methods for formatting and 
  * unformatting U.S. telephone numbers.
  */

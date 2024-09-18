@@ -1,4 +1,4 @@
-// ValidateInput.java
+package CS220.week3;// ValidateInput.java
 // Validating user information using regular expressions.
 
 

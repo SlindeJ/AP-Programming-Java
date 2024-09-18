@@ -1,4 +1,4 @@
-
+package CS220.week3;
 /** 
  * This program test a user input number to 
  * verify that it is in the proper format:

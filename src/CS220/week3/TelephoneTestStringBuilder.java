@@ -1,3 +1,5 @@
+package CS220.week3;
+
 import java.util.Scanner;
 /**
  * This program demonstrates the Telephone class's static methods
