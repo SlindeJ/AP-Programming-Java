@@ -22,5 +22,6 @@ public class week3LAB_PP1 {
         int p = (h - m + r + n + 19) % 32;
         // p == day, n == month
         System.out.println("Easter Sunday is on, Year: " + year + " Month: " + n + " Day: " + p);
+
     }
 }
