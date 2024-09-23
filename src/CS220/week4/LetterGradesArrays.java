@@ -7,11 +7,13 @@ public class LetterGradesArrays {
    public static void main(String[] args) {
       
 	  //Step-1: get user input grades by calling getInputGrades() method 
-     // int[] gradesArray= getInputGrades();
+     int[] gradesArray= getInputGrades();
       
       //Step-2: check if gradesArray is empty, then
       // print out an error message "no grades entered!" and exit the entire program
-
+       if (gradesArray.length == 0) {
+           System.out.println("No grades entered!");
+       }
       
       //Step-3: define countGrades array by calling getGradesCount() method to create grade counters
       final char[] letterGrade = {'A', 'B', 'C', 'D', 'F'};     
@@ -59,14 +61,21 @@ public class LetterGradesArrays {
        int numGrades = input.nextInt();
    
        //step-1.1: define a scoreArray
-       
+       int[] scoreArray = new int[numGrades];
 	   System.out.println("Enter " + numGrades + " grades, separate them by whitespace"); 
 	   
 	   //step-1.2: define a for loop to read grade 
 	   //if input grade is not in the range 0-100, print out error message "invalid input!"
 	   //and then exit the entire program
 	   //otherwise, add input grade to scoreArray
-	  
+	  for (int i = 0; i < numGrades; i++) {
+          int grade = input.nextInt();
+          if (grade < 0 || grade > 100) {
+              System.out.println("Invalid input");
+              System.exit(1);
+          }
+          scoreArray[i] = grade;
+      }
       //step 1.3: return scoreArray
       return null;
    }

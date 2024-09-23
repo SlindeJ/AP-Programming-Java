@@ -14,6 +14,9 @@ public class LetterGrades {
 		int fCount = 0; // count of F grades
 
 		Scanner input = new Scanner(System.in);
+		System.out.println("How many grades do you want to enter? ");
+		int numGrades = input.nextInt();
+		int[] gradelist = new int[numGrades];
 
 		System.out.println("Enter grades, separate them by whitespace, enter -1 to quit");
 //use hasNext() method to double check if there is any data (default: split data by whitespace) left in the keyboard input stream
