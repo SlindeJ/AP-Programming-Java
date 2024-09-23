@@ -30,27 +30,33 @@ public class Interest {
       //     
      
       // display headers
-      System.out.printf("%s%20s%n", "Year", "Amount on deposit");
-      // calculate amount on deposit for each of ten years
-      double amount = principal;
-      for (int i = 1; i <= years; ++i) { 
-    	  
-         //version-1: calculate new amount on deposit for specified year  
-    	 // https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html#pow-double-double-
-          //version-1: use Math.pow() method,
-          System.out.printf("%4d%,20.2f%n", i, amount);   // display the year and the amount     
-      } 
-      // display headers
-      System.out.printf("\n%s%20s%n", "Year", "Amount on deposit");
-      amount = principal;
-      for (int i = 1; i <= years*compoundPeriods; ++i) { 
-          //version-2: calculate new amount on deposit   
-     	 // without using Math.pow() method
- 
-       } 
+      displayFutureValue(principal, rate, compoundPeriods, years);
    } 
    
    //Add definition of the displayFutureValue method here
-   //displayFutureValue()
+   public static void displayFutureValue(double principal, double rate, int compoundPeriods, int years) {
+      System.out.printf("%s%20s%n", "Year", "Amount on deposit");
+      // calculate amount on deposit for each of ten years
+      double amount = principal;
+      for (int i = 1; i <= years; ++i) {
+
+         //version-1: calculate new amount on deposit for specified year
+         // https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html#pow-double-double-
+         //version-1: use Math.pow() method,
+         amount = principal*Math.pow((1+rate/compoundPeriods), compoundPeriods*i);
+         System.out.printf("%4d%,20.2f%n", i, amount);   // display the year and the amount
+      }
+      // display headers
+      System.out.printf("\n%s%20s%n", "Year", "Amount on deposit");
+      amount = principal;
+      for (int i = 1; i <= years*compoundPeriods; ++i) {
+         //version-2: calculate new amount on deposit
+         // without using Math.pow() method
+         amount = amount*(1+rate/compoundPeriods);
+         if (i % compoundPeriods == 0) {
+            System.out.printf("%4d%,20.2f%n", i, amount);
+         }
+      }
+   }
 } 
 

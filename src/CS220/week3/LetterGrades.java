@@ -18,7 +18,23 @@ public class LetterGrades {
 		System.out.println("Enter grades, separate them by whitespace, enter -1 to quit");
 //use hasNext() method to double check if there is any data (default: split data by whitespace) left in the keyboard input stream
 		// use a while loop
-
+		while (input.hasNext()) {
+			int grade = input.nextInt(); // get user input grade one by one
+			if (grade < 0) { // end of the input
+				break;
+			}
+			// get total grade and count number of grades
+			gradeCounter++;
+			total = total + grade;
+			// decide the letter grade for each numerical grade
+			switch (grade/10) {
+				case 9, 10 -> ++aCount;
+				case 8 -> ++bCount;
+				case 7 -> ++cCount;
+				case 6 -> ++dCount;
+				default -> ++fCount;
+			}
+		}
 		input.close();
 		// display grade report
 		System.out.printf("%nGrade Report:%n");
