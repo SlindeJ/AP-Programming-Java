@@ -79,6 +79,23 @@ public class ArrayDemo {
 		// replace element with given index in 2D array
 		String index = "1-2"; // means row 1 and column 2
 
+		int rowIndex = -1, colIndex = -1;
+		if (!index.isEmpty()) {
+			rowIndex = Integer.parseInt(index.trim().split("-")[0]);
+			colIndex = Integer.parseInt(index.trim().split("-")[1]);
+		}
+		//print2Darray([rowIndex][colIndex]);
+		twoDarrayV4[rowIndex][colIndex] = 0;
 	}
 
+	private static void print2Darray(final int[][] twoDarray) {
+		System.out.println("=".repeat(30));
+		// use nested for loop to print out each member in 2D array
+		for (int row = 0; row < twoDarray.length; row++) {
+			for (int col = 0; col < twoDarray[row].length; col++) {
+				System.out.printf("%d ", twoDarray[row][col]);
+			}
+			System.out.println();
+		}
+	}
 }
