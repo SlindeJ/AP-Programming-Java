@@ -16,8 +16,8 @@ public class LetterGradesArrays {
        }
       
       //Step-3: define countGrades array by calling getGradesCount() method to create grade counters
-      final char[] letterGrade = {'A', 'B', 'C', 'D', 'F'};     
-   
+      final char[] letterGrade = {'A', 'B', 'C', 'D', 'F'};
+       int[] countGrades = getGradesCount(gradesArray, letterGrade);
       
       //Step-4: display grade report by calling displayReport() method
     //  displayReport(); //add arguments in method call
@@ -86,15 +86,24 @@ public class LetterGradesArrays {
     * @param letterGrade
     * @return
     */
-   public static int[] getGradesCount(int[] gradesArray, char[] letterGrade)
+   public static int[] getGradesCount(final int[] gradesArray, final char[] letterGrade)
    {   
 	   //define a grade counter array: countGrades
-	   
+	   int[] countGrades = new int[letterGrade.length]; // grade counters array
 	   
 	   //define a loop to count each numerical grade based on its equivalent letter grade 
-	  
+	   // grade
+       for (int grade : gradesArray) {
+           switch (grade/10) {  // switch functionality should be pretty easy to understand from here (PS, I love JetBrains Software)
+               case 9, 10 -> countGrades[0]++;
+               case 8 -> countGrades[1]++;
+               case 7 -> countGrades[2]++;
+               case 6 -> countGrades[3]++;
+               default -> countGrades[4]++;
+           }
+       }
 	   //return countGrades array
-	   return null;
+	   return countGrades;
    }
    
    /**
