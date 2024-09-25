@@ -1,18 +1,20 @@
 
 
 //Letter Grades using arrays example
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class LetterGradesArrays {
    public static void main(String[] args) {
       
 	  //Step-1: get user input grades by calling getInputGrades() method 
-     int[] gradesArray= getInputGrades();
-      
+     //int[] gradesArray= getInputGrades();
+      int[] gradesArray = {100, 98, 44, 76, 81};
       //Step-2: check if gradesArray is empty, then
       // print out an error message "no grades entered!" and exit the entire program
        if (gradesArray.length == 0) {
            System.out.println("No grades entered!");
+           System.exit(1);
        }
       
       //Step-3: define countGrades array by calling getGradesCount() method to create grade counters
@@ -24,13 +26,14 @@ public class LetterGradesArrays {
       
      
       //Step-5: sort grades in gradesArray
-      //System.out.println("before sorting: " + Arrays.toString(gradesArray));
+      System.out.println("before sorting: " + Arrays.toString(gradesArray));
       
       //Call Arrays.sort() method
-      
+      Arrays.sort(gradesArray);
       //System.out.println("after sorting: " + Arrays.toString(gradesArray));
       //Extra discussion: to get reversed order of elements in an array:  Collections.reverse(Arrays.asList(gradesArray));
-
+       Arrays.sort(gradesArray);
+       System.out.println("after reverse: " + Arrays.toString(gradesArray));
       
     /*  
       //Step-6: search grade in gradesArray

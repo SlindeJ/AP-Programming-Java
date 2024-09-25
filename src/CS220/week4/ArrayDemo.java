@@ -61,15 +61,21 @@ public class ArrayDemo {
 
 		int[][] twoDarrayV1 = null;
 
-		int[][] twoDarrayV2 = new int[5][4];
-
-		int[][] twoDarrayV3 = new int[3][];
+		int[][] twoDarrayV2 = new int[5][4];	// create new 2d array with 5 rows and 4 columns
+		System.out.println(Arrays.deepToString(twoDarrayV2));
+		// print out the hash code in each dimention
+		for (int[] ele : twoDarrayV2) {
+			System.out.println(Arrays.toString(ele));
+		}
+		int[][] twoDarrayV3 = new int[3][];		// create new 2d array with 3 rows and decide columns later
 		twoDarrayV3[0] = new int[10];
 		twoDarrayV3[1] = new int[5];
 		twoDarrayV3[2] = new int[1];
 
 		int[][] twoDarrayV4 = { { 1, 2, 3 }, { 4, 5 }, { 7, 8, 9, 10 } };
-
+		for (int[] ele : twoDarrayV4) {
+			System.out.println(Arrays.toString(ele));
+		}
 		// replace element with given index in 2D array
 		String index = "1-2"; // means row 1 and column 2
 
