@@ -24,14 +24,13 @@ public class ESPGame {
                 case "p": colors[4]++;
             }
             System.out.println(input);
+            randColors[returnRand()]++;
         }
         System.out.println(output);
     }
 
-    public static int returnRand() {
-
-
-        return -1;
+    public static int returnRand() {    // returns int between 0 - 4
+        return (int) (Math.random() * 5);
     }
 }
 
