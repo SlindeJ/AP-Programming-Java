@@ -18,10 +18,16 @@ public class ESPGame {
                 break;
             switch (input.toLowerCase()) {
                 case "r": colors[0]++;
+                break;
                 case "g": colors[1]++;
+                break;
                 case "b": colors[2]++;
+                break;
                 case "y": colors[3]++;
+                break;
                 case "p": colors[4]++;
+                break;
+                default: break;
             }
             System.out.println(input);
             randColors[returnRand()]++;
