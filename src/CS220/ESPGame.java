@@ -26,7 +26,8 @@ public class ESPGame {
             System.out.println(input);
             randColors[returnRand()]++;
         }
-        System.out.println(output);
+        System.out.println(colors.toString());
+        System.out.println(randColors.toString());
     }
 
     public static int returnRand() {    // returns int between 0 - 4
