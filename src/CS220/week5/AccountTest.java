@@ -1,5 +1,5 @@
-//import java.util.ArrayList;
-//import java.util.Random;
+import java.util.ArrayList;
+import java.util.Random;
 
 //This class is used to create object instance and test the program Account.java
 
@@ -8,7 +8,7 @@ public class AccountTest{
 		
 //when in the case that no constructor defined in a class, compiler will create a default constructor, 
 //that default constructor will be called when creating object instances from that class.
-		Account aa = new Account();
+		Account aa = new Account("aa", 300);
 		System.out.println("Account name: " + (aa.getName().isEmpty()? "N/A": aa.getName()) );
 		
 //when in the case that at least one constructor defined in a class, then compiler will not create a default constructor,

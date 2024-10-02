@@ -4,12 +4,16 @@
 
 public class Account {
    private String name; // instance variable
+   private double balance;
    //add instance variable (or property or attribute): balance
    
    
    //add a constructor, to provide customized initialization for a new account name and balance
-   
-   
+   // same name as the class name and no return type, and most of the time, public
+   public Account(String name, double balance) {
+      this.name = name;
+      this.balance = balance;
+   }
    
    //add method: deposit() //i.e., set balance, instead of giving setBalance as the method name, "deposit" is a more proper name 
    
