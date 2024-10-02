@@ -26,12 +26,21 @@ public class ESPGame {
             System.out.println(input);
             randColors[returnRand()]++;
         }
-        System.out.println(colors.toString());
-        System.out.println(randColors.toString());
+        printGuesses(colors);
+        printGuesses(randColors);
     }
 
     public static int returnRand() {    // returns int between 0 - 4
         return (int) (Math.random() * 5);
+    }
+
+    public static void printGuesses(int[] g) {
+        // print array guesses
+        String[] colors = {"red", "green", "blue", "yellow", "purple"};
+        for (int i = 0; i < g.length; i++) {
+            System.out.print(colors[i] + " ");
+            System.out.println(g[i]);
+        }
     }
 }
 
