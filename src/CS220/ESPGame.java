@@ -6,30 +6,32 @@ import java.util.*;
 
 public class ESPGame {
     public static void main(String[] args) {
+
         //Scanner input = new Scanner(System.in);
-            // colors are red, green, blue, yellow, purple
+        // colors are red, green, blue, yellow, purple
+        int[] colors = new int[5];
+        int[] randColors = new int[5];
         String output = "";
-        while(true) {
+        while (true) {
             String input = (String) JOptionPane.showInputDialog(null, "Enter a color: r(red), g(green),b(blue), y(yellow), p(purple):\nEnter q to quit", "ESP game", JOptionPane.QUESTION_MESSAGE); // Initial choice is "Red" here
             if (input == null || Character.toLowerCase(input.trim().charAt(0)) == 'q') //cancel button is clicked or 'q' is entered
                 break;
-            output += input + " ";
+            switch (input.toLowerCase()) {
+                case "r": colors[0]++;
+                case "g": colors[1]++;
+                case "b": colors[2]++;
+                case "y": colors[3]++;
+                case "p": colors[4]++;
+            }
             System.out.println(input);
         }
         System.out.println(output);
-//
-        output = "";
-        String[] list = { "Red", "Blue", "Green", "Yellow", "Purple"};
-        while(true) {
-            String input = (String) JOptionPane.showInputDialog(null, "Choose a color:", "ESP game", JOptionPane.QUESTION_MESSAGE, null, // Use default icon
-            list, // Array of choices
-                    list[0]); // Initial choice is "Red" here
-            if (input == null) //cancel button is clicked
-                break;
-            output += input + "\t";
-            System.out.println(input);
-        }
-        System.out.println(output);
+    }
+
+    public static int returnRand() {
+
+
+        return -1;
     }
 }
 
