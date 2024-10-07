@@ -1,3 +1,5 @@
+package CS220.week6;
+
 import java.util.Scanner;
 
 public class ReviewSystem2 {

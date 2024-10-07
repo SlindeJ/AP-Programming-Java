@@ -1,3 +1,4 @@
+package CS220.week6;
 
 public class Review {
     //instead use constructor to initialize instance variables
