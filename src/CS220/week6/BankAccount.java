@@ -7,7 +7,19 @@ package CS220.week6;
 public class BankAccount
 {  
    private double balance;
+   private int transactionCount;          // count of transactions
+   private double transactionFee;
 
+   private void countTransaction() {      // class method to increment transactionCount
+      transactionCount++;
+      if (transactionCount > 5) {   // implements a fee call method if transaction would occur a fee
+         addFee();
+      }
+   }
+   private void addFee() {
+      transactionFee++; // doing fee things
+      balance--;
+   }
    /**
       Constructs a bank account with a zero balance.
    */
@@ -32,6 +44,7 @@ public class BankAccount
    public void deposit(double amount)
    {  
       balance = balance + amount;
+      countTransaction();
    }
 
    /**
@@ -50,6 +63,7 @@ public class BankAccount
       {
          balance = balance - amount;
       }
+      countTransaction();
    }
 
    /**
@@ -70,5 +84,7 @@ public class BankAccount
    {   
       return balance;
    }
+   public int getTransactionCount() { return transactionCount; }
+   public double getTransactionFee() { return transactionFee; }
 }
 
