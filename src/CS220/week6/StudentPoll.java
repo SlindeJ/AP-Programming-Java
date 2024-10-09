@@ -1,4 +1,4 @@
-// StudentPoll.java
+package CS220.week6;// StudentPoll.java
 // An example of using try-catch block
 // Poll analysis program.
 
@@ -16,7 +16,12 @@ public class StudentPoll {
 		for (int answer = 0; answer < responses.length; answer++) {
 
 			// add try and catch blocks in this for loop
-			++frequency[responses[answer]];
+			try {
+			++frequency[responses[answer]]; }
+			catch (ArrayIndexOutOfBoundsException e) {
+				System.out.println(e);
+				e.getStackTrace();	// find error position
+			}
 
 		}
 
