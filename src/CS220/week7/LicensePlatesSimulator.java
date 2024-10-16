@@ -1,7 +1,9 @@
+package CS220.week7;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.*;
 
 public class LicensePlatesSimulator {
 
@@ -10,23 +12,24 @@ public class LicensePlatesSimulator {
 		//by using random generator, and then save them to a text file (.txt) named
 		//"license_plates".
 	//step-1: create a Random object as a random number generator 
-		
+		Random rGenerator = new Random();
 		
 	//step-2: define a ArrayList of Strings to store licensePlates
-	//call getRandomPlates() method to create that ArrayList	
-	
+	//call getRandomPlates() method to create that ArrayList
+		ArrayList<String> plates = new ArrayList<String>();
+		String p1 = "", p2 = "";
 		
 	//output to a text file
 		String filename = "license_plates.txt";
 		
 	//Step-3: Use PrintWriter and FileWriter objects to write random generated license plates to the output file	
-		
+		PrintWriter pw = new PrintWriter(new FileWriter((filename)));
 
-		
-		
+		for (String p : plates) {
+			pw.println(p);
+		}
 	//Step-4: closes the PrintWriter and releases any system resources associated with the file output
-	    
-		
+		pw.close();
 		System.out.println("Data is saved to " + (new File(filename)).getAbsolutePath()	);
 	    
 	}
@@ -42,7 +45,11 @@ public class LicensePlatesSimulator {
 		
 	//Step-5: add a for loop to generate part-1 and part-2 of the license plates
 		//call getRandom() method to get part-1 and part-2 string
-		
+		for (int i = 0; i < numR; i++) {
+			getRandom(rGenerator, (int)'A', (int)'Z', 3);		// alternatively a = 65 and z = ???
+			getRandom(rGenerator, 0, 9, 4);
+		}
+		plates.add(p1 + "-" + p2);
 		return plates;
 	}
 
