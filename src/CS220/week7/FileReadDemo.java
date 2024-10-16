@@ -1,3 +1,4 @@
+package CS220.week7;
 
 import java.io.*; //program uses class File and exception
 import java.util.ArrayList;
