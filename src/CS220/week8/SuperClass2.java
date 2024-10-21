@@ -1,4 +1,4 @@
-//to demonstrate how superclass and subclass constructors work
+package CS220.week8;//to demonstrate how superclass and subclass constructors work
 
 public class SuperClass2 {
 	/* constructor #1*/

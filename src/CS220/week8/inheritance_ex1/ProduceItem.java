@@ -11,7 +11,7 @@ public class ProduceItem extends GenericItem{
 	   }
 	   public String getExpiration() {
 	      return expirationDate;
-	   }  
+	   }  				// produce has an expiration data unique to the subclass
 	   
 	   //add a public method printProduct
 	   public void printProduct() {  
@@ -20,6 +20,9 @@ public class ProduceItem extends GenericItem{
 		   System.out.println(expirationDate);
 	
 	   }
-	   //add a public method toString()
+	   public String toString() {
+		   //return super.toString() + "Product: " + expirationDate;
+		   return String.format("%s\n%d\n%s\n", super.getItemName(), super.getItemQuantity(), expirationDate); // only public or protected members can be accessed from the superclass
+	   }
 		
 	}

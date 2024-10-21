@@ -1,5 +1,5 @@
 //to demonstrate how superclass and subclass constructors work
-
+package CS220.week8;
 public class SubClass2 extends SuperClass2 { //set up inheritance 
 	/* constructor */
 	public SubClass2(int arg)

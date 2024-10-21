@@ -16,4 +16,11 @@ public class GenericItem {
 		      System.out.println(itemName + " " + itemQuantity);
 		   }
 
+		   public String getItemName() {
+			   return itemName;
+		   }
+		   public int getItemQuantity() {
+			   return itemQuantity;
+		   }
+
 }

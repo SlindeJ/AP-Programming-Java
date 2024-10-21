@@ -1,5 +1,5 @@
 //to demonstrate how superclass and subclass constructors work
-
+package CS220.week8;
 public class ConstructorDemo2{
 	public static void main(String[] args)
 	{
