@@ -13,24 +13,24 @@ public class PhoneBookTest {
 		
 		//Get file name from user input 
 		Scanner input = new Scanner(System.in);
-		try {
-			String fileName = input.next();
-			File file = new File(fileName);
-			Scanner inputFile = new Scanner(file);
-			while (inputFile.hasNextLine()) {
-				String[] i = inputFile.nextLine().split(",");
-				String lastName = i[0];
-				String firstName = i[1];
-				String phoneNumber = i[2];
-				b.addPhone(firstName, lastName, phoneNumber);
+		while (true) {
+			try {
+				String fileName = input.next();
+				File file = new File(fileName);
+				Scanner inputFile = new Scanner(file);
+				while (inputFile.hasNextLine()) {
+					String[] i = inputFile.nextLine().split(",");
+					String lastName = i[0];
+					String firstName = i[1];
+					String phoneNumber = i[2];
+					b.addPhone(firstName, lastName, phoneNumber);
+				}
+				break;
+			} catch (FileNotFoundException e) {
+				System.out.println("Cannot find the sample data file! Try again!");
+			} catch (Exception e) {
+				System.out.println("System Error!");
 			}
-		}
-		catch (FileNotFoundException e) {
-			System.out.println("Cannot find the sample data file! Try again!");
-		}
-		catch (Exception e) {
-			e.printStackTrace();
-			System.exit(0);
 		}
         //read in data from the file
         //print names and phone numbers from phone list of the PhoneBook object

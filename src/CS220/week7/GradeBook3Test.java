@@ -1,4 +1,4 @@
-// GradeBook3Test.java
+package CS220.week7;// GradeBook3Test.java
 // GradeBook3Test creates a GradeBook3 object and use an ArrayList object to store grades,
 // 
 import java.util.Scanner;

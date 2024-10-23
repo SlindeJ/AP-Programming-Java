@@ -1,4 +1,4 @@
-// GradeBook3.java
+package CS220.week7;// GradeBook3.java
 // GradeBook3 class using an ArrayList to store test grades.
 import java.util.ArrayList;
 import java.util.Collections;
