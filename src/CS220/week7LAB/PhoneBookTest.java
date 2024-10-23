@@ -1,8 +1,6 @@
 package CS220.week7LAB;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
 import java.util.*;
 
 public class PhoneBookTest {
@@ -15,16 +13,17 @@ public class PhoneBookTest {
 		Scanner input = new Scanner(System.in);
 		while (true) {
 			try {
-				String fileName = input.next();
-				File file = new File(fileName);
-				Scanner inputFile = new Scanner(file);
-				while (inputFile.hasNextLine()) {
-					String[] i = inputFile.nextLine().split(",");
+				String fileName = input.nextLine();
+				BufferedReader br = new BufferedReader(new FileReader(fileName));
+				String st;
+				while ((st = br.readLine()) != null) {
+					String[] i = st.split(",");
 					String lastName = i[0];
 					String firstName = i[1];
 					String phoneNumber = i[2];
 					b.addPhone(firstName, lastName, phoneNumber);
 				}
+				br.close();
 				break;
 			} catch (FileNotFoundException e) {
 				System.out.println("Cannot find the sample data file! Try again!");
