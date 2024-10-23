@@ -1,4 +1,4 @@
-//Use FileReader to read in data
+package CS220.week7;//Use FileReader to read in data
 
 //FileReader is a convenience class for reading character files.
 //The constructors of this class assume that the default character encoding

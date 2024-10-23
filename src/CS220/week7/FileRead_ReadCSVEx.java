@@ -1,4 +1,4 @@
-//A BufferedReader is another way for reading data from streams
+package CS220.week7;//A BufferedReader is another way for reading data from streams
 //	It uses an internal buffer which allows it to read much larger streams (such as large files)
 //	We prefer using a BufferedReader to a Scanner in almost every instance
 

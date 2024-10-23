@@ -1,4 +1,4 @@
-//This example use PrintWriter to write data to a text file
+package CS220.week7;//This example use PrintWriter to write data to a text file
 
 import java.util.Scanner; // program uses class Scanner
 import java.io.*; //program uses class PrintWriter

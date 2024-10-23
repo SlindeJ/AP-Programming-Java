@@ -1,4 +1,4 @@
-//This example use File object and Scanner object to read in data
+package CS220.week7;//This example use File object and Scanner object to read in data
 
 import java.io.*; //program uses class File and exception
 import java.util.Scanner; //program uses class Scanner

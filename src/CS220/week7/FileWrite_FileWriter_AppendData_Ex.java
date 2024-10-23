@@ -1,4 +1,4 @@
-//FileWriteDemo2.java
+package CS220.week7;//FileWriteDemo2.java
 
 import java.util.Scanner; // program uses class Scanner
 import java.io.*; //program uses class PrintWriter

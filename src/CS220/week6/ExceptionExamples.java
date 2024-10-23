@@ -1,4 +1,4 @@
-//An example to illustrate different types of exceptions
+package CS220.week6;//An example to illustrate different types of exceptions
 //ArrayIndexOutOfBoundsException, InputMismatchException, ArithmaticException
 
 //import java.util.Arrays;
