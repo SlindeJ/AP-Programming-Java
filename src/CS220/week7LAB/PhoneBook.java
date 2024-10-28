@@ -20,7 +20,11 @@ public class PhoneBook {
                  r.add(p);
              }
          }
-         return r;
+         if (!r.isEmpty()) {
+             return r;
+         } else {
+             return r;
+         }
      }
      //public method: print
      public void print() {

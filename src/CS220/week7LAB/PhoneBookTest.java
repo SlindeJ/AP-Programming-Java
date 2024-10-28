@@ -13,10 +13,12 @@ public class PhoneBookTest {
 		Scanner input = new Scanner(System.in);
 		while (true) {
 			try {
-				String fileName = input.nextLine();
-				BufferedReader br = new BufferedReader(new FileReader(fileName));
+				System.out.print("Filename:");
+				String fileName = input.next();
+				BufferedReader br = new BufferedReader(new FileReader("src/CS220/week7LAB/" + fileName));
 				String st;
 				while ((st = br.readLine()) != null) {
+					//st = br.readLine();
 					String[] i = st.split(",");
 					String lastName = i[0];
 					String firstName = i[1];
@@ -35,9 +37,17 @@ public class PhoneBookTest {
         //print names and phone numbers from phone list of the PhoneBook object
 		b.print();
         //prompt user to enter a person's name or the first few characters of a name
-		System.out.println("Please enter a key to search for: ");
+		System.out.print("Please enter a key to search for: ");
 		String key = input.next();
         //search phone book to find resident names and phone numbers
-		b.searchPhone(key);
+		ArrayList<ResidentPhone> a = b.searchPhone(key);
+		if (a.isEmpty()) {
+			System.out.println("Did not find customer name that starts with " + key);
+		} else {
+			for (ResidentPhone r : a) {
+				System.out.println(r);
+			}
+		}
+
 	}
 }
