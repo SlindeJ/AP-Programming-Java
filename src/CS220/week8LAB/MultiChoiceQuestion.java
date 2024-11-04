@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 
-public class MultiChoiceQuestion extends Question
+public class MultiChoiceQuestion extends ChoiceQuestion
 {
    private ArrayList<String> allAnswers;
 

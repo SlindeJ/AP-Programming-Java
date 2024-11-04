@@ -3,7 +3,7 @@ package CS220.week8LAB;
 /**
 A question with choices and one correct answer.
 */
-public class ChoiceQuestion
+public class ChoiceQuestion extends Question
 {
 	private int numberOfChoices;
 
@@ -25,11 +25,11 @@ public class ChoiceQuestion
 	   public void addChoice(String choice, boolean correct)
 	   {
 	      //update numberOfChoices
-		   
+		   numberOfChoices++;
 		   //call addText()method defined in Question class to create question choice
-		   
+		   addText(choice);
 		   //if the choice is a correct answer, then set the choice as the answer
-		  
+		  if (correct) { super.setAnswer(choice); }
 	   }
 	   
 	   public int getNumberChoice() {
