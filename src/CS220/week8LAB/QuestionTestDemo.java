@@ -39,9 +39,10 @@ public class QuestionTestDemo {
 		q3.addChoice("McFarland", false);
 		q3.addChoice("Hope", false);
 		q3.addChoice("Upham", true);
+		q3.setAnswer("Hyland");						// adds the answer to the array list in multichoicequestion
+		q3.setAnswer("Upham");
 		quiz.add(q3);
 		//create a new NumericQuestion question and add it to quiz
-		System.out.println(67.0/11);
 		NumericQuestion q4 = new NumericQuestion("What is 67/11?", (67.0/11.0));
 		quiz.add(q4);
 		//create a new FreeResponse question and add it to quiz
@@ -64,7 +65,7 @@ public class QuestionTestDemo {
 		int qNum = 0;
 		while (qNum < quiz.size()) {
 			System.out.println("Question #" + (qNum + 1));
-			System.out.println("Question type: " + quiz.get(qNum).getClass().getSimpleName());
+			System.out.println("Question type: " + quiz.get(qNum).getClass().getSimpleName()); // gets the name of the question class called from
 			quiz.get(qNum).display();
 			System.out.print("Enter your answer: ");
 			String answer = input.nextLine();
