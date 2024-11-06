@@ -7,9 +7,9 @@ import java.util.Scanner;
 public class PolyAnimalDemo3 {
 
 	public static void main(String[] args) {
-		 Fish goldenFish = new Fish();
-		 Frog greenFrog = new Frog();
-		 Bird whiteBird = new Bird();
+		 Fish goldenFish = new Fish(0, 0, "fish");
+		 Frog greenFrog = new Frog(0, 0, "frog");
+		 Bird whiteBird = new Bird(0, 0, "bird");
 		 
 //apply polymorphism: (1) use method overriding to provide different implementations for the same method prototype 
 		 goldenFish.move();
@@ -37,28 +37,38 @@ public class PolyAnimalDemo3 {
 		 
 		 
 		 //step-4: call displayAnimalList() method to display a list of available animals
-		
+		displayAnimalList(animalList);
 		 
 		 Scanner input = new Scanner(System.in);
 		 String message = "\nChoose an animal from the list to move: ";
 		 int validChoice = 1;
 		 while (validChoice <= animalList.size()) {
-			 validChoice = getUserChoice(message, input, animalList.size()); 
+			 validChoice = getUserChoice(message, input, animalList.size());
 			 if (validChoice == animalList.size() + 1)
 				 break; //quit
-			 
+			 validChoice--;
+
 			 //step-5.1: call move() method to move the animal that user choices
-			 
+			 animalList.get(validChoice).move();
 			
 			 //step-5.2: display the animal info after move it (use the toString() method)
-			 
-		 } 
+			 animalList.get(validChoice).toString();
+		 }
 		 
 		 //step-6: call distanceFrom() method (defined in PolyAnimal class)
 		 //to get and display the distance between two animals
 		 //you may use nested for loop to get two different animals in the list
-		
-		 
+		validChoice = 0;
+		for (int i = 0; i < animalList.size(); i++) {
+			if (!(animalList.get(i).getId().equals(animalList.get(validChoice).getId()))) {
+				double distance = animalList.get(validChoice).getDistanceFrom(animalList.get(validChoice), animalList.get(i));	// (animal a, animal b)
+				System.out.println("Distance between " + animalList.get(i).getClass().getSimpleName() + " and " + animalList.get(validChoice).getClass().getSimpleName() + ": " + distance);
+			}
+		}
+		double distance = animalList.get(validChoice).getDistanceFrom(animalList.get(1), animalList.get(2));	// (animal a, animal b)
+		System.out.println("Distance between " + animalList.get(2).getClass().getSimpleName() + " and " + animalList.get(1).getClass().getSimpleName() + ": " + distance);
+
+
 		 
 	}
 	/**
