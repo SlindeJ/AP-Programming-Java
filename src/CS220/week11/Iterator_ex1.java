@@ -9,7 +9,7 @@ public class Iterator_ex1 {
    public static void main(String[] args) {
       // add elements in colors array to list
       String[] colors = {"MAGENTA", "RED", "WHITE", "BLUE", "CYAN"};
-      List<String> list = new ArrayList<String>();
+      ArrayList<String> list = new ArrayList<String>();
       for (String color : colors) {
          list.add(color); // adds color to end of list
       }
