@@ -1,4 +1,4 @@
-// Collection interface demonstrated via an ArrayList object.
+package CS220.week11;// Collection interface demonstrated via an ArrayList object.
 // Use Iterator to remove elements in an ArrayList
 import java.util.List;
 import java.util.ArrayList;
