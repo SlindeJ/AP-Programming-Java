@@ -55,11 +55,11 @@ class IdComparator implements Comparator<Student> {
 //extra question: how to order students based on name and then age in descending order? 
 class NameAgeComparator implements Comparator<Student> {
 	public int compare(Student a, Student b) {
-		if (Integer.compare(a.getAge(), b.getAge()) != 0) {
+		if (Integer.compare(b.getAge(), a.getAge()) != 0) {		// descending order
 			return Integer.compare(a.getAge(), b.getAge());
 		}
 		else {
-			return a.getName().compareTo(b.getName());
+			return b.getName().compareTo(a.getName());		// descending order
 		}
 	}
 }
