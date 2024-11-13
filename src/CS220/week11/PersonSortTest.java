@@ -42,7 +42,6 @@ public class PersonSortTest {
 		System.out.println(Arrays.toString(studentarray));
 	}
 }
-
 //(5) Implement Comparator interface to create customized 
 //comparator other than "natural order" for the objects of Student class
 //create a IdComparator to sort students based on their id
@@ -51,7 +50,6 @@ class IdComparator implements Comparator<Student> {
 	public int compare(Student a, Student b) {
 		// compare id: string, use compareTo() method from java.lang.String class
 		return a.getStudentId().compareTo(b.getStudentId());
-
 	}
 }
 //(6) comparator that orders students based on name first and then age in ascending order 

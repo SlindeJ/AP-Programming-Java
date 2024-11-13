@@ -1,7 +1,7 @@
 package CS220.week11LAB;
 import java.util.*;
 
-public class Address //step-1: add declaration here to implement Comparable<T> interface
+public class Address implements Comparable<Address> //step-1: add declaration here to implement Comparable<T> interface
 //https://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html
 {
     private String street;
@@ -29,6 +29,15 @@ public class Address //step-1: add declaration here to implement Comparable<T> i
 
         return houseNumber + " " + street;
 
+    }
+
+    @Override
+    public int compareTo(Address a) {
+        if (this.street.compareTo(a.street) != 0) {
+            return this.street.compareTo(a.street);
+        } else {
+            return Integer.compare(this.houseNumber, a.houseNumber);
+        }
     }
 
 //step-2: add implementation of the compareTo() method here
