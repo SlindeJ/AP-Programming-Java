@@ -12,7 +12,7 @@ public class PersonSortTest {
 //The user can access elements by their integer index (position in the list), and search for elements in the list.		
 		// (1) Create a list of students
 		ArrayList<Student> studentList = new ArrayList<Student>();
-		Iterator<Student>
+		Iterator<Student> = studentList.iterator();
 		// (2) Use enhanced loop to print out student info
 		for (Student s : studentList) {
 			System.out.println(s);
@@ -31,6 +31,7 @@ public class PersonSortTest {
 		// (7) sort student list again by using customized comparator objects
 		studentList.sort(new IdComparator());
 		// (8) convert a list to an array, and print out student info
+		System.out.println("\nAfter sort");
 		Student[] studentarray = studentList.toArray(new Student[studentList.size()]);
 		for (Student s : studentarray) {
 			System.out.println(s);
