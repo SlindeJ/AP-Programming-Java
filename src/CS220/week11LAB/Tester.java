@@ -12,8 +12,8 @@ public class Tester  {
                         new Address("Main Street", 57),
                         new Address("Hollywood Ave", 11235),
                         //step-3: add two more new Address objects, and then test the compareTo() method
-                        new Address("Lobbo Dr.", 18188),
-                        new Address("St. N. Nolan", 80085),
+                        new Address("Lobbo Dr.", 78374),
+                        new Address("St. N. Nolan", 123456),
                 };
         //Step-4: bonus points: reproduce the following statements by using nested for loop
         //to compare all addresses in the Address array.
@@ -29,8 +29,8 @@ public class Tester  {
         Arrays.sort(addresses);
         System.out.println(Arrays.toString(addresses));
         System.out.println(
-                "Expected: [11235 Hollywood Ave, 57 Main Street, 123 Main Street]");
+                "Expected: [11235 Hollywood Ave, 78374 Lobbo Dr., 57 Main Street, 123 Main Street, 123456 St. N. Nolan]");
         System.out.println(addresses[3].compareTo(addresses[4]) > 0);
-        System.out.println("Expected: true");
+        System.out.println("Expected: false");
     }
 }
