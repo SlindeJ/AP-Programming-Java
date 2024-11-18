@@ -1,4 +1,4 @@
-package CodeSpaces.Q1.Prog52aCl;
+package Q1.Prog52aCl;
 
 public class Cl52a {    // rectangle class
     private int myLen;  // Also Helper Class

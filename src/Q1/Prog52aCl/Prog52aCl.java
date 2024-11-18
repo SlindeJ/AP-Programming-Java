@@ -1,4 +1,4 @@
-package CodeSpaces.Q1.Prog52aCl;
+package Q1.Prog52aCl;
 import java.util.*;
 
 public class Prog52aCl {
