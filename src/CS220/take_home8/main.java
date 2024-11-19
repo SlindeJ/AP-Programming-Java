@@ -2,7 +2,7 @@ package CS220.take_home8;
 
 import java.util.*;
 
-public class main {
+public class main implements Comparable<Shape>{
     public static void main(String[] args) {
         Shape circle = new Circle(5);
         Shape rectangle = new Rectangle(7, 9);
@@ -20,8 +20,8 @@ public class main {
         System.out.println(rectangle2.toString());
 
     }
-//    public int compareTo(Shape s) {
-//
-//        return 0;
-//    }
+    public int compareTo(Shape s) {
+
+        return -1;
+    }
 }
