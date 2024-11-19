@@ -23,7 +23,7 @@ public class main {
         }
         System.out.println("Top 5 Shapes Sorted by Perimeter:\n");
         Collections.sort(sArray, new SortByPerimeter());
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 5; i++) {
             System.out.println(sArray.get(i));
         }
     }
