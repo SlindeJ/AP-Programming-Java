@@ -45,7 +45,7 @@ public class PhoneBookTest {
 
 		if (result.size() > 0) {
 			System.out.println("Find Customers:");
-			result.forEach((value) -> System.out.println(value));
+			result.forEach((value) -> System.out.println(value));			// a forEach method
 		} else
 			System.out.printf("Did not find customer with name starts with \"%s\"", searchKey);
 
