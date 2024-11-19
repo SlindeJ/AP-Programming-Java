@@ -1,4 +1,4 @@
-package CS220.take_home8;
+package CS220.take_home8_Comparator;
 
 public abstract class Shape {
     public abstract double getArea();

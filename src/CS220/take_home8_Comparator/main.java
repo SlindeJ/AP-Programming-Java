@@ -1,4 +1,4 @@
-package CS220.take_home8;
+package CS220.take_home8_Comparator;
 
 import java.util.*;
 
@@ -16,6 +16,15 @@ public class main {
         for (Shape s : sArray) {
             System.out.println(s);
         }
+        System.out.println("Shapes Sorted by Area:\n");
         Collections.sort(sArray, new SortByArea());
+        for (Shape s : sArray) {
+            System.out.println(s);
+        }
+        System.out.println("Top 5 Shapes Sorted by Perimeter:\n");
+        Collections.sort(sArray, new SortByPerimeter());
+        for (int i = 0; i < 4; i++) {
+            System.out.println(sArray.get(i));
+        }
     }
 }

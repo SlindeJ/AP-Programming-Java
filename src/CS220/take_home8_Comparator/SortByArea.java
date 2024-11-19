@@ -1,7 +1,6 @@
-package CS220.take_home8;
-import java.util.*;
+package CS220.take_home8_Comparator;
 
-public class SortByArea implements Comparator<Shape> {
+public class SortByArea implements java.util.Comparator<Shape> {
     @Override
     public int compare(Shape s1, Shape s2) {
         if (s1.getArea() > s2.getArea()) {
