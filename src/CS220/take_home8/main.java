@@ -20,4 +20,8 @@ public class main {
         System.out.println(rectangle2.toString());
 
     }
+//    public int compareTo(Shape s) {
+//
+//        return 0;
+//    }
 }
