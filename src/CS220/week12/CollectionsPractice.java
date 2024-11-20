@@ -1,10 +1,6 @@
 package CS220.week12;
 // Programming Practice 8.3.1
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class CollectionsPractice {
 	public static void main(String[] args) {
@@ -35,9 +31,10 @@ public class CollectionsPractice {
 
 		// 7-1: call searchColors method to find a color in the list
 		searchColors(colorList);
+		outputList("after search: ", colorList);
 		// 8-1: call countColors method to count the frequency of different colors in
 		// the list
-
+		countColors(colorList);
 	}
 
 	// outputList() method to print out a given list to console
@@ -102,7 +99,11 @@ public class CollectionsPractice {
 
 	// step 8: add a method to count colors in a list
 	private static void countColors(List<String> colorList) {
+		Set<String> colorSet = new HashSet<>(colorList);		// when convert to HashSet it will only keep unique colors
+		for (String color : colorSet) {
+			System.out.println(color + ": " + Collections.frequency(colorList, color));		// the .frequency just returns the amount of colors in the arrayList
 
+		}
 	}
 
 }
