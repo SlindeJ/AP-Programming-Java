@@ -38,7 +38,7 @@ class Sentence2
    {
       phrase = aPhrase;
    }
-   
+
    /**
       Finds a string of text in a sentence.
       @param text the string to find.
@@ -49,7 +49,7 @@ class Sentence2
    {
       return find(text, 0);
    }
-   
+
    /**
       Helper method to find the index of a string.
       @param text the string to find
@@ -59,7 +59,7 @@ class Sentence2
    private int find(String text, int index)
    {
      //add your code here to complete this method
-	   
+	   return -1;
    }
 }
 
