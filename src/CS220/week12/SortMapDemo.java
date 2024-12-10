@@ -30,7 +30,8 @@ public class SortMapDemo {
 		// here the keys are String variables, String implements Comparable interface
 		// and compareTo() method
 		// https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html#compareTo(java.lang.String)
-		Map<String, String> sortedMap = new TreeMap<>();
+		Map<String, String> sortedMap = new TreeMap<>();		// TREE MAP!!!!!!!
+		// need to make sure keys in TreeMap can be compared as they will be sorted by key
 		sortedMap.putAll(unsortedMap); // sort data in unsortedMap by the keys (here keys are strings, use String's
 										// compareTo() method
 		System.out.println("sorted map: " + sortedMap);
@@ -51,8 +52,8 @@ public class SortMapDemo {
 		}
 
 		// version-1: sort keys alone, and then use sorted keys to find values
-		List<String> phoneNumbers = new ArrayList<>(unsortedPhoneMap.keySet());
-		Collections.sort(phoneNumbers);
+		List<String> phoneNumbers = new ArrayList<>(unsortedPhoneMap.keySet());		// converts the keyset into an arrayList
+		Collections.sort(phoneNumbers);												// sorted by phone numbers
 		System.out.println("\nsorted phone map (version-1): ");
 		for (String s : phoneNumbers) {
 			System.out.println(s + ": " + Arrays.toString(unsortedPhoneMap.get(s)));
