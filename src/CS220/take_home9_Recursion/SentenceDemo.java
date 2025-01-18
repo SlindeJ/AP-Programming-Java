@@ -46,7 +46,7 @@ class Sentence
    public boolean find(String text)
    {
       //add your code here
-	   
-	   
+
+	   return false;
    }
 }

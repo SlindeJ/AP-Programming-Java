@@ -1,11 +1,26 @@
 package Chem_Database.Periodic_Table;
 import java.util.*;
+import java.io.*;
 
 public class main {
     public static void main(String[] args) {
 
 
-        List<int> table = new List<int>[118];
+        ArrayList<Element> elements = new ArrayList<>(118);
+
+
+        try {
+            File elementFile = new File("src/Chem_Database/Periodic_Table/elementFile");
+            Scanner readIn = new Scanner(elementFile);
+            while (readIn.hasNextLine()) {
+                String data = readIn.useDelimiter(",").next();
+                System.out.println(data);
+            }
+            readIn.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found");
+        }
+
     }
 }
 
@@ -20,4 +35,3 @@ public class main {
 // abbreviated element name/symbol
 // periodic number
 // molecular mass
-// number of neutrons (this will not be one of the available infos to get)
