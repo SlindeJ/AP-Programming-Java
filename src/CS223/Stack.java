@@ -1,37 +1,41 @@
 package CS223;
+import java.util.Arrays;
 
 public class Stack {
     int top_of_stack = -1;
     int stack_size = 5;
-    int[] array = new int[stack_size];  // create an empty array of length stack_size
+    char[] array = new char[stack_size];  // create an empty array of length stack_size
 
-    public void push(int x) {
+    public void Push(char x) {
         // error case else push to stack
         if (top_of_stack == stack_size - 1) {
-            System.out.println("Error, Stack is full");
+            System.out.println("Error, cannot push because stack is full");
         } else {
             array[++top_of_stack] = x;
         }
     }
-    public int pop() {
+    public char Pop() {
         // error case else return first thing and top_of_stack--
         if (top_of_stack < 0) {
-            System.out.println("Error, Stack is empty");
-            return -1;
+            System.out.println("Error, cannot pop because stack is empty");
+            return ' ';
         } else {
             return array[top_of_stack--];
         }
     }
-    public int peek() {
+    public char Peek() {
         // do not remove like pop
         if (top_of_stack < 0) {
-            System.out.println("Error, Stack is empty");
-            return -1;
+            System.out.println("Error, cannot peak because stack is empty");
+            return ' ';
         } else {
             return array[top_of_stack];
         }
     }
-    public int size() {
+    public int Size() {
         return top_of_stack + 1;
+    }
+    public void print_stack() {
+        System.out.println(Arrays.toString(array) + "\t\t" + top_of_stack + "\t" + Size()); // this was a pain
     }
 }
