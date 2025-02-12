@@ -1,8 +1,8 @@
 package CS223;
 
-public class Stack_demo extends Stack {
+public class Stack_demo {
     public static void main(String[] args) {
-        Stack_demo s = new Stack_demo();
+        Stack s = new Stack();
         System.out.println("Stack Contents\t\tTop\tSize");
         s.print_stack();
         s.Push('C'); s.print_stack();

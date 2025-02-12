@@ -1,4 +1,5 @@
 package CS223;
+import java.util.Arrays;
 
 public class Queue {
     int front;
@@ -39,7 +40,7 @@ public class Queue {
     public int Size(){
         return size;
     }
-    public String print_Queue() {
-        return "";
+    public void print_Queue() {
+        System.out.println(Arrays.toString(q) + " " + front + " " + rear + " " + size);       // q, front, rear, size
     }
 }
