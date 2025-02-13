@@ -41,6 +41,7 @@ public class Queue {
         return size;
     }
     public void print_Queue() {
-        System.out.println(Arrays.toString(q) + " " + front + " " + rear + " " + size);       // q, front, rear, size
+        System.out.printf("%-40s %-10s %-10s %-10s \n", Arrays.toString(q), front, rear, size);       // q, front, rear, size
+        // had to use google to remind myself how to format the spacing again
     }
 }
