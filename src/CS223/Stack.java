@@ -32,10 +32,20 @@ public class Stack {
             return array[top_of_stack];
         }
     }
+    private String FArray(char[] array) {       // format array (string)
+        String arr = "";
+        int tos = top_of_stack;
+        while (tos != -1) {
+            arr = array[tos--] + ", " + arr;
+        }
+        if (arr.length() == 0) { return "[]"; }
+        return "[" + arr.substring(0, arr.length() - 2) + "]";
+    }
     public int Size() {
         return top_of_stack + 1;
     }
     public void print_stack() {
-        System.out.println(Arrays.toString(array) + "\t\t" + top_of_stack + "\t" + Size()); // this was a pain
+        //System.out.println(FArray(array) + "\t\t" + top_of_stack + "\t" + Size()); // this was a pain
+        System.out.printf("%-20s %-6d %-5d\n", FArray(array), top_of_stack, Size());
     }
 }

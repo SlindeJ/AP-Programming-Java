@@ -3,7 +3,7 @@ package CS223;
 public class Stack_demo {
     public static void main(String[] args) {
         Stack s = new Stack();
-        System.out.println("Stack Contents\t\tTop\tSize");
+        System.out.println("Stack Contents\t\t Top\tSize");
         s.print_stack();
         s.Push('C'); s.print_stack();
         s.Push('S'); s.print_stack();
