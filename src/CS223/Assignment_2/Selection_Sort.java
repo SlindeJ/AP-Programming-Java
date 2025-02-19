@@ -2,8 +2,8 @@ package CS223.Assignment_2;
 
 public class Selection_Sort {
 
-    public long SelectionSort(String[] arr) {
-        long start = System.currentTimeMillis();
+    public void SelectionSort(String[] arr) {
+        //long start = System.currentTimeMillis();
         for (int i = 0; i < arr.length; i++) {
             int j = i;  // for second loop
             String temp = arr[i];
@@ -13,7 +13,8 @@ public class Selection_Sort {
             }
             arr[j] = temp;
         }
-        long end = System.currentTimeMillis();
-        return end - start;
+        //long end = System.currentTimeMillis();
+        //return end - start;       // was originally going to make the sort call also return the runtime itself but I see the template does that for me
+        // I thought I'd include this for reference and evidence of the process
     }
 }
