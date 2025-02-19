@@ -1,6 +1,4 @@
-package CS223;
-
-import java.util.Arrays;
+package CS223.Assignment_1;
 
 public class Queue_demo {
     public static void main(String[] args) {

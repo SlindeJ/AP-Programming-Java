@@ -1,4 +1,4 @@
-package CS223;
+package CS223.Assignment_1;
 
 public class Stack_demo {
     public static void main(String[] args) {

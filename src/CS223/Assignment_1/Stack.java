@@ -1,5 +1,4 @@
-package CS223;
-import java.util.Arrays;
+package CS223.Assignment_1;
 
 public class Stack {
     int top_of_stack = -1;
