@@ -1,0 +1,22 @@
+src/CS223/Assignment_2/names-1k-unsorted.csv took 13ms to Selection Sort
+src/CS223/Assignment_2/names-10k-unsorted.csv took 170ms to Selection Sort
+src/CS223/Assignment_2/names-50k-unsorted.csv took 2747ms to Selection Sort
+src/CS223/Assignment_2/names-100k-unsorted.csv took 10372ms to Selection Sort
+src/CS223/Assignment_2/names-1k-sorted.csv took 0ms to Selection Sort
+src/CS223/Assignment_2/names-10k-sorted.csv took 0ms to Selection Sort
+src/CS223/Assignment_2/names-50k-sorted.csv took 1ms to Selection Sort
+src/CS223/Assignment_2/names-100k-sorted.csv took 2ms to Selection Sort
+
+src/CS223/Assignment_2/names-1k-unsorted.csv took 16ms to Insertion Sort
+src/CS223/Assignment_2/names-10k-unsorted.csv took 171ms to Insertion Sort
+src/CS223/Assignment_2/names-50k-unsorted.csv took 3589ms to Insertion Sort
+src/CS223/Assignment_2/names-100k-unsorted.csv took 15066ms to Insertion Sort
+src/CS223/Assignment_2/names-1k-sorted.csv took 2ms to Insertion Sort
+src/CS223/Assignment_2/names-10k-sorted.csv took 82ms to Insertion Sort
+src/CS223/Assignment_2/names-50k-sorted.csv took 2286ms to Insertion Sort
+src/CS223/Assignment_2/names-100k-sorted.csv took 8102ms to Insertion Sort
+
+I would estimate that insertion sort would take about ~15,000,000ms to sort 1 million unsorted names, and I think it would take ~8,000,000ms if the 1 million names were sorted.
+I came up with these estimates because to me it seems every multiple of 10 names increases by 10^n after 1k names. from 1k -> 10k is a factor of ~10x, while from 10k -> 100k
+is a factor of ~100x. I used this pattern to estimate the time it would take for both the unsorted and sorted names.
+
