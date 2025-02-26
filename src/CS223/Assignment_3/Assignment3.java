@@ -4,6 +4,9 @@ import java.util.Arrays;
 
 public class Assignment3 {
 	private static int countNumberOfKeys(int[] array, int key) {
+		if (minIndexBinarySearch(array, key) == -1 && maxIndexBinarySearch(array, key) == -1) {	// -1 - -1 + 1 would equate to 1, so I added a base case to prevent that
+			return 0;
+		}
 		return maxIndexBinarySearch(array, key) - minIndexBinarySearch(array, key) + 1;
 	}
 
@@ -62,7 +65,30 @@ public class Assignment3 {
 	}
 
 	private static int findPeak(int[] array) {
-		throw new UnsupportedOperationException("findPeak");
+			int left = 0, right = array.length -1;
+			while (left <= right) {
+				if (left == right) {return left;}
+				if (right == left+1) {
+					if (array[left] > array[right]) {return left;}
+					else {return right;}
+				}
+				int mid = (left + right) / 2;
+				if (array[mid] < array[mid + 1]) {
+					left = mid + 1;
+				} else if (array[mid] < array[mid-1]) {
+					right = mid - 1;
+				} else {return mid;}
+
+//            if (array[mid] == key){
+//                return mid;
+//            }
+//            else if (array[mid] > key) {
+//                right = mid - 1;
+//            } else {
+//                left = mid + 1;
+//            }
+			}
+			return -1;
 	}
 
 	// DO NOT MODIFY
