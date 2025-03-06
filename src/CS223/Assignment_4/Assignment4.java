@@ -21,7 +21,9 @@ public class Assignment4 {
 	}
 
 	private static void mergeSort(int[] mergedArray, int left, int right, LinkedList.Node leftNode, LinkedList.Node rightNode) {
-		throw new UnsupportedOperationException("mergeSort)");
+		if (left >= right) { return; }
+		int mid = (left + right) / 2;
+
 
 	}
 

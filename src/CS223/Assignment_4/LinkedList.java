@@ -1,3 +1,5 @@
+package CS223.Assignment_4;
+
 public class LinkedList {
 	private Node head, tail;
 	private int size;
