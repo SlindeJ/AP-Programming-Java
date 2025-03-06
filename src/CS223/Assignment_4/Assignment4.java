@@ -1,13 +1,28 @@
+package CS223.Assignment_4;
+import java.util.*;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 
 public class Assignment4 {
-	private static int[] binaryMerge(int[] a, int[] b) {
-		throw new UnsupportedOperationException("binaryMerge)");
+	private static int[] binaryMerge(int[] A, int[] B) {
+		int lenA = A.length;
+		int lenB = B.length;
+		int lenC = lenA + lenB;
+		int a = 0, b = 0, c = 0;
+		int[] C = new int[lenC];
+		while(a < lenA && b < lenB){
+			if(A[a] < B[b]) { C[c++] = A[a++]; }
+    else {C[c++] = B[b++];}
+			}
+			while(a < lenA) { C[c++] = A[a++];}
+			while(b < lenB) { C[c++] = B[b++]; }
+			return C;
 	}
 
 	private static void mergeSort(int[] mergedArray, int left, int right, LinkedList.Node leftNode, LinkedList.Node rightNode) {
 		throw new UnsupportedOperationException("mergeSort)");
+
 	}
 
 	private static ArrayList<String> commonElements(String[] A, String[] B) {
