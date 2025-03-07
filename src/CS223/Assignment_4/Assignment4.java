@@ -2,7 +2,6 @@ package CS223.Assignment_4;
 import java.util.*;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.LinkedList;
 
 public class Assignment4 {
 	private static int[] binaryMerge(int[] A, int[] B) {
@@ -23,12 +22,47 @@ public class Assignment4 {
 	private static void mergeSort(int[] mergedArray, int left, int right, LinkedList.Node leftNode, LinkedList.Node rightNode) {
 		if (left >= right) { return; }
 		int mid = (left + right) / 2;
-
-
+		LinkedList.Node midNode = leftNode;
+		for (int i = left; i < mid; i++) {
+			midNode = midNode.next;
+		}
+		mergeSort(mergedArray, left, mid, leftNode, midNode);
+		mergeSort(mergedArray, mid+1, right, midNode.next, rightNode);
+		int k = left;
+		LinkedList.Node tmp1 = leftNode;
+		LinkedList.Node tmp2 = midNode.next;
+		while (tmp1 != midNode.next && tmp2 != rightNode.next) {
+			if (tmp1.value < tmp2.value) {
+				mergedArray[k++] = tmp1.value;
+				tmp1 = tmp1.next;
+			} else {
+				mergedArray[k++] = tmp2.value;
+				tmp2 = tmp2.next;
+			}
+		}				// I love IntelliJ
+		while (tmp1 != midNode.next) { mergedArray[k++] = tmp1.value;
+		tmp1 = tmp1.next;}
+		while (tmp2 != rightNode.next) { mergedArray[k++] = tmp2.value;
+		tmp2 = tmp2.next;}
+		k = left;
+		LinkedList.Node tmp3 = leftNode;
+		while (tmp3 != rightNode.next) { tmp3.value = mergedArray[k++];
+		tmp3 = tmp3.next;}
 	}
 
 	private static ArrayList<String> commonElements(String[] A, String[] B) {
-		throw new UnsupportedOperationException("commonElements");
+		ArrayList<String> C = new ArrayList<>();
+		int a = 0, b = 0;
+		while (a < A.length && b < B.length) {
+			if (A[a].compareTo(B[b]) < 0) { a++; }
+			else if (A[a].compareTo(B[b]) > 0) { b++; }
+			else {
+				C.add(A[a]);
+				a++;
+				while (a < A.length && A[a] == B[b]) { a++; }
+			}
+		}
+		return C;
 	}
 
 	// DO NOT MODIFY
