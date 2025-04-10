@@ -64,7 +64,7 @@ public class BST {
 			removeLeaf(nodeToEradicate);	// ERADICATE IT
 		}
 		else {
-			removeLeaf(nodeToEradicate); // ERADICATEEEEEEE
+			removeOneChild(nodeToEradicate); // ERADICATEEEEEEE
 		}
 		return true;
 	}
