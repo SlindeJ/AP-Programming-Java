@@ -12,27 +12,100 @@ public class BST {
 	// END DO NOT MODIFY
 
 	public Node search(int key) {
-		throw new UnsupportedOperationException("search");
+		if (root == null) { return null; }
+		Node current = root;
+		while (current != null) {
+			if (current.value == key) {
+				return current;
+			} else if (current.value > key) {
+				current = current.left;
+			} else {
+				current = current.right;
+			}
+		}
+		return null;
 	}
 
 	public Node insert(int key) {
-		throw new UnsupportedOperationException("insert");
+		if (root == null) { root = new Node(key);
+		return root;}
+		Node current = root;
+		Node parent = null;
+		while (current != null) {
+			if (current.value == key) {
+				return null;
+			} else if (current.value > key) {
+				parent = current;
+				current = current.left;
+			} else if (current.value < key) {		// pretty simple logic here
+				parent = current;
+				current = current.right;
+			}
+		}
+		Node baby = new Node(key);		// cute!
+		baby.parent = parent;
+		if (parent.value > baby.value) {
+			parent.left = baby;
+		} else {
+			parent.right = baby;
+		}
+		return baby;
 	}
 
 	public boolean remove(int key) {
-		throw new UnsupportedOperationException("remove");
+		Node nodeToEradicate = search(key); 		//E R A D I C A T E
+		if (nodeToEradicate == null) { return false; }
+		if (nodeToEradicate.left != null && nodeToEradicate.right != null) {
+			Node max = findMax(nodeToEradicate.left);		//???
+			nodeToEradicate.value = max.value;
+			nodeToEradicate = max;
+		}
+		else if (nodeToEradicate.left == null && nodeToEradicate.right == null) {		// if leafNode
+			removeLeaf(nodeToEradicate);	// ERADICATE IT
+		}
+		else {
+			removeLeaf(nodeToEradicate); // ERADICATEEEEEEE
+		}
+		return true;
 	}
 
 	private Node findMax(Node node) {
-		throw new UnsupportedOperationException("findMax");
+		if (node == null) { return null; }
+		if (node.right != null) { return findMax(node.right); }		// my big brain actually did something wow
+		return node;		// RECURSION WOOHOOOOO!!!
 	}
 
 	private void removeLeaf(Node leaf) {
-		throw new UnsupportedOperationException("removeLeaf");
+		if (leaf == root) { root = null; }
+		Node parent = leaf.parent;
+		if (leaf == parent.left) { parent.left = null; }
+		else {
+			parent.right = null;
+		}
+		leaf.parent = null;		// noooooooo, you orphaned the leaf!
 	}
 
-	private void removeOneChild(Node node) {
-		throw new UnsupportedOperationException("removeOneChild");
+	private void removeOneChild(Node node) {	// you monster
+		Node child;
+		if (node.left != null) {
+			child = node.left;
+			node.left = null;
+		} else {
+			child = node.right;
+			node.right = null;
+		}
+		if (child.left == null && child.right == null) {
+			root = child;
+			child.parent = null;
+		} else {
+			if (node.parent.left == node) {
+				node.parent.left = child;
+			} else {
+				node.parent.right = child;
+			}
+		}
+		child.parent = node.parent;
+		node.parent = null;
 	}
 
 	// DO NOT MODIFY
