@@ -23,24 +23,61 @@ public class Hashtable {
 	}
 	// END DO NOT MODIFY
 
-	private int computeHash(int key) {
-		throw new UnsupportedOperationException("computeHash");
-	}
+	private int computeHash(int key) { return (37*key + 61)%tableSize; }
 
 	public boolean insert(int key) {
-		throw new UnsupportedOperationException("insert");
+		if (search(key)) { return false; }
+		int hash = computeHash(key);
+		LinkedList<Integer> list = table.get(hash);
+		if (list == null) {
+			list = new LinkedList<>();
+			table.add(hash, list);
+		}
+		list.add(key);
+		return true;
 	}
 
 	public boolean remove(int key) {
-		throw new UnsupportedOperationException("remove");
+		int hash = computeHash(key);
+		LinkedList<Integer> list = table.get(hash);
+		if (list == null) {
+			return false;
+		}
+		for (int i = 0; i < list.size()-1; i++) {
+			if (i == key) {
+				list.remove(i);
+				return true;
+			}
+		}
+		return false;
 	}
 
 	public boolean search(int key) {
-		throw new UnsupportedOperationException("search");
+		int hash = computeHash(key);
+		LinkedList<Integer> list = table.get(hash);
+		if (list == null) {
+			return false;
+		}
+		for (int i = 0; i < list.size()-1; i++) {
+			if (i == key) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	@Override
 	public String toString() {
-		throw new UnsupportedOperationException("toString");
+		String str = "";
+		for (int i = 0; i < tableSize - 1; i++) {
+			str += "Slot " + i + ":";
+			LinkedList<Integer> list = table.get(i);
+			if (list != null) {
+				for (int j = 0; j < list.size()-1; j++) {
+					str += list.get(j) + " ";
+				}
+			}
+		}
+		return str + "\n";
 	}
 }
