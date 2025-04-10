@@ -34,15 +34,16 @@ public class BST {
 		while (current != null) {
 			if (current.value == key) {
 				return null;
-			} else if (current.value > key) {
-				parent = current;
-				current = current.left;
-			} else if (current.value < key) {		// pretty simple logic here
+			} else if (current.value < key) {
 				parent = current;
 				current = current.right;
+			} else {		// pretty simple logic here
+				parent = current;
+				current = current.left;
 			}
 		}
 		Node baby = new Node(key);		// cute!
+		baby.value = key;
 		baby.parent = parent;
 		if (parent.value > baby.value) {
 			parent.left = baby;
@@ -60,7 +61,7 @@ public class BST {
 			nodeToEradicate.value = max.value;
 			nodeToEradicate = max;
 		}
-		else if (nodeToEradicate.left == null && nodeToEradicate.right == null) {		// if leafNode
+		if (nodeToEradicate.left == null && nodeToEradicate.right == null) {		// if leafNode
 			removeLeaf(nodeToEradicate);	// ERADICATE IT
 		}
 		else {
@@ -71,18 +72,23 @@ public class BST {
 
 	private Node findMax(Node node) {
 		if (node == null) { return null; }
-		if (node.right != null) { return findMax(node.right); }		// my big brain actually did something wow
-		return node;		// RECURSION WOOHOOOOO!!!
+		while (node.right != null) {
+			node = node.right;
+		}
+		return node;
 	}
 
 	private void removeLeaf(Node leaf) {
 		if (leaf == root) { root = null; }
-		Node parent = leaf.parent;
-		if (leaf == parent.left) { parent.left = null; }
 		else {
-			parent.right = null;
+			Node parent = leaf.parent;
+			if (leaf == parent.left) {
+				parent.left = null;
+			} else {
+				parent.right = null;
+			}
+			leaf.parent = null;        // noooooooo, you orphaned the leaf!
 		}
-		leaf.parent = null;		// noooooooo, you orphaned the leaf!
 	}
 
 	private void removeOneChild(Node node) {	// you monster
@@ -94,18 +100,17 @@ public class BST {
 			child = node.right;
 			node.right = null;
 		}
-		if (child.left == null && child.right == null) {
-			root = child;
-			child.parent = null;
+		if (node == root) { root = child;
+		child.parent = null;
 		} else {
 			if (node.parent.left == node) {
 				node.parent.left = child;
 			} else {
 				node.parent.right = child;
 			}
+			child.parent = node.parent;
+			node.parent = null;
 		}
-		child.parent = node.parent;
-		node.parent = null;
 	}
 
 	// DO NOT MODIFY

@@ -34,6 +34,7 @@ public class Hashtable {
 			table.add(hash, list);
 		}
 		list.add(key);
+		count++;
 		return true;
 	}
 
@@ -43,9 +44,10 @@ public class Hashtable {
 		if (list == null) {
 			return false;
 		}
-		for (int i = 0; i < list.size()-1; i++) {
-			if (i == key) {
+		for (int i = 0; i < list.size(); i++) {
+			if (list.get(i) == key) {
 				list.remove(i);
+				count--;
 				return true;
 			}
 		}
@@ -58,8 +60,8 @@ public class Hashtable {
 		if (list == null) {
 			return false;
 		}
-		for (int i = 0; i < list.size()-1; i++) {
-			if (i == key) {
+		for (int i = 0; i < list.size(); i++) {
+			if (list.get(i) == key) {
 				return true;
 			}
 		}
@@ -69,13 +71,14 @@ public class Hashtable {
 	@Override
 	public String toString() {
 		String str = "";
-		for (int i = 0; i < tableSize - 1; i++) {
-			str += "Slot " + i + ":";
+		for (int i = 0; i < tableSize; i++) {
+			str += "Slot " + i + ": ";
 			LinkedList<Integer> list = table.get(i);
 			if (list != null) {
-				for (int j = 0; j < list.size()-1; j++) {
+				for (int j = 0; j < list.size(); j++) {
 					str += list.get(j) + " ";
 				}
+				str += "\n";
 			}
 		}
 		return str + "\n";
