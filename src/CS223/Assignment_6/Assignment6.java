@@ -11,7 +11,7 @@ public class Assignment6 {
 	private static final String[] cities = new String[51];
 
 	public static void main(String[] args) {
-		fileToAdjacencyMatrix("distances.csv");
+		fileToAdjacencyMatrix("C:\\Users\\swimn\\IdeaProjects\\AP-Programming-Java\\src\\CS223\\Assignment_6\\distances.csv");
 
 		dijkstra(cityToIndex("Portland ME"), cityToIndex("Seattle WA"));
 		System.out.println();
@@ -90,7 +90,7 @@ public class Assignment6 {
 		while (!open.isEmpty()) {
 			int smallestVertex = 0;
 			for (int i = 0; i < open.size(); i++) {
-				if (dist[open.get(i)] < dist[smallestVertex]) {
+				if (dist[smallestVertex] <= dist[i]) {
 					smallestVertex = i;
 				}
 			}
@@ -98,10 +98,10 @@ public class Assignment6 {
 			closed[smallestVertex] = true;
 			for (int v = 0; v < 51; v++) {
 				if (adjMatrix[smallestVertex][v] == -1) {
-					continue;
+					//continue;
 				}
 				if (closed[v]) {
-					continue;
+					//continue;
 				}
 				Double len = dist[smallestVertex] + adjMatrix[smallestVertex][v];
 				if (len < dist[v]) {
@@ -111,9 +111,9 @@ public class Assignment6 {
 						open.add(v);
 					}
 				}
-				if (dist[t] == Double.POSITIVE_INFINITY) {
-					System.out.println("No path from cities" + s + " to cities" + t);
-				}
+			}
+			if (dist[t] == Double.POSITIVE_INFINITY) {
+				System.out.println("No path from " + cities[s] + " to " + cities[t]);
 			}
 		}
 		ArrayList<Integer> path = new ArrayList(5);
@@ -121,9 +121,9 @@ public class Assignment6 {
 		while (curr != -1) {
 			path.add(curr);
 			curr = parent[curr];
-			System.out.println("Path from cities" + s + " to cities" + t);
+			System.out.println("Path from " + cities[s] + " to " + cities[t]);
 		}
-		for (int i = path.size()-1; i > 0; i--) {
+		for (int i = path.size(); i > 0; i--) {
 			System.out.print(cities[i]);
 		}
 		System.out.println("Total Distance: " + dist[t] + " miles");
