@@ -1,5 +1,10 @@
 package CS223.Assignment_6;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Assignment6 {
 	// DO NOT MODIFY
 	private static final double[][] adjMatrix = new double[51][51];
@@ -41,14 +46,75 @@ public class Assignment6 {
 	// END DO NOT MODIFY
 
 	private static void fileToAdjacencyMatrix(String path) {
-		throw new UnsupportedOperationException("fileToAdjacencyMatrix");
+		File file = new File(path);
+		try {
+			Scanner reader = new Scanner(file);
+			reader.nextLine();		// don't need the identifiers
+			for (int i = 0; i < 51; i++) {
+				String city = reader.nextLine();
+				String[] c = city.split(",");
+				cities[i] = c[0];
+				for (int j = 0; j < 51; j++) {
+					double eee = Double.parseDouble(c[j+1]);
+					adjMatrix[i][j] = eee;
+				}
+			}
+		} catch (FileNotFoundException e) {
+			System.out.println("File not found");
+		}
 	}
 
 	private static int cityToIndex(String city) {
-		throw new UnsupportedOperationException("cityToIndex");
+		for (int i = 0; i < 51; i++) {
+			if (city.equals(cities[i])) {
+				return i;
+			}
+		}
+		return -1;
 	}
 
 	private static void dijkstra(int s, int t) {
-		throw new UnsupportedOperationException("dijkstra");
+		Double[] dist = new Double[51];
+		for (int i = 0; i < 51; i++) {
+			dist[i] = Double.POSITIVE_INFINITY;
+		}
+		dist[s] = 0.0;
+		ArrayList<Integer> open = new ArrayList(5);
+		open.add(s);
+		boolean[] closed = new boolean[51];
+		//closed[s] = true;
+		int[] parent = new int[51];
+		for (int i = 0; i < 51; i++) {
+			parent[i] = -1;
+		}
+		while (!open.isEmpty()) {
+			int smallestVertex = 0;
+			for (int i = 0; i < open.size(); i++) {
+				if (dist[open.get(i)] < dist[smallestVertex]) {
+					smallestVertex = i;
+				}
+			}
+			open.remove(smallestVertex);
+			closed[smallestVertex] = true;
+			for (int v = 0; v < 51; v++) {
+				if (adjMatrix[smallestVertex][v] == -1) {
+					continue;
+				}
+				if (closed[v]) {
+					continue;
+				}
+				Double len = dist[smallestVertex] + adjMatrix[smallestVertex][v];
+				if (len < dist[v]) {
+					dist[v] = len;
+					parent[v] = smallestVertex;
+					if (!open.contains(v)) {
+						open.add(v);
+					}
+				}
+				if (dist[v] == Double.POSITIVE_INFINITY) {
+					System.out.println("No path from cities" + s + " to cities" + t);
+				}
+			}
+		}
 	}
 }
