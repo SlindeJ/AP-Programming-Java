@@ -111,10 +111,21 @@ public class Assignment6 {
 						open.add(v);
 					}
 				}
-				if (dist[v] == Double.POSITIVE_INFINITY) {
+				if (dist[t] == Double.POSITIVE_INFINITY) {
 					System.out.println("No path from cities" + s + " to cities" + t);
 				}
 			}
 		}
+		ArrayList<Integer> path = new ArrayList(5);
+		int curr = t;
+		while (curr != -1) {
+			path.add(curr);
+			curr = parent[curr];
+			System.out.println("Path from cities" + s + " to cities" + t);
+		}
+		for (int i = path.size()-1; i > 0; i--) {
+			System.out.print(cities[i]);
+		}
+		System.out.println("Total Distance: " + dist[t] + " miles");
 	}
 }
