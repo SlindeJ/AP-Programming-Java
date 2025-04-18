@@ -3,6 +3,7 @@ package CS223.Assignment_6;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.PriorityQueue;
 import java.util.Scanner;
 
 public class Assignment6 {
@@ -79,29 +80,26 @@ public class Assignment6 {
 			dist[i] = Double.POSITIVE_INFINITY;
 		}
 		dist[s] = 0.0;
-		ArrayList<Integer> open = new ArrayList(5);
+		PriorityQueue<Integer> open = new PriorityQueue<>((a, b) -> dist[a].compareTo(dist[b]));
 		open.add(s);
 		boolean[] closed = new boolean[51];
-		//closed[s] = true;
 		int[] parent = new int[51];
 		for (int i = 0; i < 51; i++) {
 			parent[i] = -1;
 		}
+
 		while (!open.isEmpty()) {
-			int smallestVertex = 0;
-			for (int i = 0; i < open.size(); i++) {
-				if (dist[smallestVertex] <= dist[i]) {
-					smallestVertex = i;
-				}
-			}
-			open.remove(smallestVertex);
+			int smallestVertex = open.poll();
+//			for (int i = 0; i < 51; i++) {
+//				if (dist[smallestVertex] < dist[i]) {
+//					smallestVertex = i;
+//				}
+//			}
+//			open.remove(smallestVertex);
 			closed[smallestVertex] = true;
 			for (int v = 0; v < 51; v++) {
-				if (adjMatrix[smallestVertex][v] == -1) {
-					//continue;
-				}
-				if (closed[v]) {
-					//continue;
+				if (adjMatrix[smallestVertex][v] == -1 || closed[v]) {
+					continue;
 				}
 				Double len = dist[smallestVertex] + adjMatrix[smallestVertex][v];
 				if (len < dist[v]) {
@@ -112,20 +110,24 @@ public class Assignment6 {
 					}
 				}
 			}
-			if (dist[t] == Double.POSITIVE_INFINITY) {
-				System.out.println("No path from " + cities[s] + " to " + cities[t]);
+
+		}
+		if (dist[t] == Double.POSITIVE_INFINITY) {
+			System.out.println("No path from " + cities[s] + " to " + cities[t]);
+		} else {
+			ArrayList<Integer> path = new ArrayList(5);
+			int curr = t;
+			while (curr != -1) {
+				path.add(curr);
+				curr = parent[curr];
+
 			}
+			System.out.println("Path from " + cities[s] + " to " + cities[t] + ":");
+			for (int i = path.size() - 1; i >= 0; i--) {
+				System.out.print("\t\t" + cities[path.get(i)]);		// bruh I forgot to grab from cities, it took me 2 hours to figure out why it was just outputting massive integers
+				System.out.println();
+			}
+			System.out.println("\nTotal Distance: " + dist[t] + " miles");
 		}
-		ArrayList<Integer> path = new ArrayList(5);
-		int curr = t;
-		while (curr != -1) {
-			path.add(curr);
-			curr = parent[curr];
-			System.out.println("Path from " + cities[s] + " to " + cities[t]);
-		}
-		for (int i = path.size(); i > 0; i--) {
-			System.out.print(cities[i]);
-		}
-		System.out.println("Total Distance: " + dist[t] + " miles");
 	}
 }
