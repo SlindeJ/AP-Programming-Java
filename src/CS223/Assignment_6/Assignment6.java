@@ -3,6 +3,7 @@ package CS223.Assignment_6;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.PriorityQueue;
 import java.util.Scanner;
 
@@ -80,7 +81,7 @@ public class Assignment6 {
 			dist[i] = Double.POSITIVE_INFINITY;
 		}
 		dist[s] = 0.0;
-		PriorityQueue<Integer> open = new PriorityQueue<>((a, b) -> dist[a].compareTo(dist[b]));
+		PriorityQueue<Integer> open = new PriorityQueue<>(Comparator.comparing(a -> dist[a]));
 		open.add(s);
 		boolean[] closed = new boolean[51];
 		int[] parent = new int[51];
