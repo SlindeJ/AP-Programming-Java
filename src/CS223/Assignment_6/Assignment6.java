@@ -19,7 +19,6 @@ public class Assignment6 {
 		System.out.println();
 
 
-
 		dijkstra(cityToIndex("Jacksonville FL"), cityToIndex("Seattle WA"));
 		System.out.println();
 
